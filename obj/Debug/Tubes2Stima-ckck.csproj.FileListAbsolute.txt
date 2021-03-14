@@ -1,0 +1,10 @@
+C:\Users\Azhar\OneDrive - Institut Teknologi Bandung\Programming\TUBES\Semester 4 - IF\Tubes 2 Stima\Tubes2Stima-ckck\bin\Debug\Tubes2Stima-ckck.exe.config
+C:\Users\Azhar\OneDrive - Institut Teknologi Bandung\Programming\TUBES\Semester 4 - IF\Tubes 2 Stima\Tubes2Stima-ckck\bin\Debug\Tubes2Stima-ckck.exe
+C:\Users\Azhar\OneDrive - Institut Teknologi Bandung\Programming\TUBES\Semester 4 - IF\Tubes 2 Stima\Tubes2Stima-ckck\bin\Debug\Tubes2Stima-ckck.pdb
+C:\Users\Azhar\OneDrive - Institut Teknologi Bandung\Programming\TUBES\Semester 4 - IF\Tubes 2 Stima\Tubes2Stima-ckck\obj\Debug\Tubes2Stima-ckck.csprojAssemblyReference.cache
+C:\Users\Azhar\OneDrive - Institut Teknologi Bandung\Programming\TUBES\Semester 4 - IF\Tubes 2 Stima\Tubes2Stima-ckck\obj\Debug\Tubes2Stima_ckck.Form1.resources
+C:\Users\Azhar\OneDrive - Institut Teknologi Bandung\Programming\TUBES\Semester 4 - IF\Tubes 2 Stima\Tubes2Stima-ckck\obj\Debug\Tubes2Stima_ckck.Properties.Resources.resources
+C:\Users\Azhar\OneDrive - Institut Teknologi Bandung\Programming\TUBES\Semester 4 - IF\Tubes 2 Stima\Tubes2Stima-ckck\obj\Debug\Tubes2Stima-ckck.csproj.GenerateResource.cache
+C:\Users\Azhar\OneDrive - Institut Teknologi Bandung\Programming\TUBES\Semester 4 - IF\Tubes 2 Stima\Tubes2Stima-ckck\obj\Debug\Tubes2Stima-ckck.csproj.CoreCompileInputs.cache
+C:\Users\Azhar\OneDrive - Institut Teknologi Bandung\Programming\TUBES\Semester 4 - IF\Tubes 2 Stima\Tubes2Stima-ckck\obj\Debug\Tubes2Stima-ckck.exe
+C:\Users\Azhar\OneDrive - Institut Teknologi Bandung\Programming\TUBES\Semester 4 - IF\Tubes 2 Stima\Tubes2Stima-ckck\obj\Debug\Tubes2Stima-ckck.pdb
