@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Tubes_2_Stima
+namespace Tubes2Stima_ckck
 {
     static class Program
     {

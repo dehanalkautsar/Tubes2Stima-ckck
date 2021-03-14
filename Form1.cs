@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Tubes_2_Stima
+namespace Tubes2Stima_ckck
 {
     public partial class Form1 : Form
     {

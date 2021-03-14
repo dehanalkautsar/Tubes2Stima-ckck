@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Azhar\\OneDrive - Institut Teknologi Bandung\\Programming\\TUBES\\Semester 4 - IF\\Tubes 2 Stima\\Tubes2Stima-ckck\\Tubes 2 Stima\\Tubes 2 Stima.csproj": {}
+    "C:\\Users\\Azhar\\OneDrive - Institut Teknologi Bandung\\Programming\\TUBES\\Semester 4 - IF\\Tubes 2 Stima\\Tubes2Stima-ckck\\Tubes2Stima-ckck.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Azhar\\OneDrive - Institut Teknologi Bandung\\Programming\\TUBES\\Semester 4 - IF\\Tubes 2 Stima\\Tubes2Stima-ckck\\Tubes 2 Stima\\Tubes 2 Stima.csproj": {
+    "C:\\Users\\Azhar\\OneDrive - Institut Teknologi Bandung\\Programming\\TUBES\\Semester 4 - IF\\Tubes 2 Stima\\Tubes2Stima-ckck\\Tubes2Stima-ckck.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Azhar\\OneDrive - Institut Teknologi Bandung\\Programming\\TUBES\\Semester 4 - IF\\Tubes 2 Stima\\Tubes2Stima-ckck\\Tubes 2 Stima\\Tubes 2 Stima.csproj",
-        "projectName": "Tubes 2 Stima",
-        "projectPath": "C:\\Users\\Azhar\\OneDrive - Institut Teknologi Bandung\\Programming\\TUBES\\Semester 4 - IF\\Tubes 2 Stima\\Tubes2Stima-ckck\\Tubes 2 Stima\\Tubes 2 Stima.csproj",
+        "projectUniqueName": "C:\\Users\\Azhar\\OneDrive - Institut Teknologi Bandung\\Programming\\TUBES\\Semester 4 - IF\\Tubes 2 Stima\\Tubes2Stima-ckck\\Tubes2Stima-ckck.csproj",
+        "projectName": "Tubes2Stima-ckck",
+        "projectPath": "C:\\Users\\Azhar\\OneDrive - Institut Teknologi Bandung\\Programming\\TUBES\\Semester 4 - IF\\Tubes 2 Stima\\Tubes2Stima-ckck\\Tubes2Stima-ckck.csproj",
         "packagesPath": "C:\\Users\\Azhar\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Azhar\\OneDrive - Institut Teknologi Bandung\\Programming\\TUBES\\Semester 4 - IF\\Tubes 2 Stima\\Tubes2Stima-ckck\\Tubes 2 Stima\\obj\\",
+        "outputPath": "C:\\Users\\Azhar\\OneDrive - Institut Teknologi Bandung\\Programming\\TUBES\\Semester 4 - IF\\Tubes 2 Stima\\Tubes2Stima-ckck\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
