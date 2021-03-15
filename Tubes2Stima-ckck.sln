@@ -3,9 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31025.194
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tubes2Stima-ckck", "Tubes2Stima-ckck.csproj", "{0073DCC1-1AEE-4CD3-88C1-851DD48F1BD0}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Testing", "..\Testing\Testing.csproj", "{EF927677-E9A6-49A5-960B-8F3EE8D579E7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tubes2Stima_ckck", "Tubes2Stima_ckck.csproj", "{0073DCC1-1AEE-4CD3-88C1-851DD48F1BD0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +15,6 @@ Global
 		{0073DCC1-1AEE-4CD3-88C1-851DD48F1BD0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0073DCC1-1AEE-4CD3-88C1-851DD48F1BD0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0073DCC1-1AEE-4CD3-88C1-851DD48F1BD0}.Release|Any CPU.Build.0 = Release|Any CPU
-		{EF927677-E9A6-49A5-960B-8F3EE8D579E7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{EF927677-E9A6-49A5-960B-8F3EE8D579E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{EF927677-E9A6-49A5-960B-8F3EE8D579E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{EF927677-E9A6-49A5-960B-8F3EE8D579E7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
