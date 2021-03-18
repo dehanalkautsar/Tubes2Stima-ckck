@@ -12,13 +12,20 @@ namespace Tubes2Stima_ckck
         /// The main entry point for the application.
         /// </summary>
         [STAThread]
+
+
         static void Main()
         {
             Console.WriteLine("Hello World");
 
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            ReadFile.inputGraphFile("test.txt");
+
+            Console.WriteLine("Press Any Key To Continue..");
+            Console.ReadLine();
+
+            //Application.EnableVisualStyles();
+            //Application.SetCompatibleTextRenderingDefault(false);
+            //Application.Run(new Form1());
         }
     }
 }

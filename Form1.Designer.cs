@@ -45,7 +45,7 @@ namespace Tubes2Stima_ckck
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(633, 548);
+            this.ClientSize = new System.Drawing.Size(586, 548);
             this.Controls.Add(this.button1);
             this.Name = "Form1";
             this.Text = "Form1";
