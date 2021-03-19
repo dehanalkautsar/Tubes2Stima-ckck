@@ -10,7 +10,31 @@ namespace Tubes2Stima_ckck
 {
     class Backend
     {
+        /* Test Azhar */
+        public static void TestAzhar()
+        {
+            Graph initGraph = ReadFile.inputGraphFile("test.txt");
+            bool[] visited = new bool[initGraph.getNumberOfNode()];
+            for (int i = 0; i < visited.Length; i++)
+            {
+                visited[i] = false;
+            }
+            string[] rute = new string[0];
 
+            bool found = initGraph.DFS("A", "H", ref visited, ref rute);
+            if (found)
+            {
+                foreach (var r in rute)
+                {
+                    Console.WriteLine(r);
+                }
+            }
+            else
+            {
+                Console.WriteLine("Not Found");
+            }
+        }
+            
         
     }
 
@@ -68,112 +92,5 @@ namespace Tubes2Stima_ckck
         }
     }
 
-    class Graph
-    {
-        private bool[,] adjacentMatrix;
-        private int count_node;
-        private Dictionary<string, int> node_dictionary;
 
-        //Constructor
-        public Graph(int countNode) {
-            this.count_node = countNode;
-            this.adjacentMatrix = new bool[count_node,count_node];
-            this.node_dictionary = new Dictionary<string, int>();
-        }
-
-        public int getNumberOfNode()
-        {
-            return this.count_node;
-        }
-
-        public bool addToDictionary(string username, int index) {
-            //add to dictionary -> <key: username, value: index>
-            try {
-                node_dictionary.Add(username,index);
-                return true;
-            } catch
-            {
-                //Console.WriteLine("Node sudah ada di dictionary");
-                return false;
-            }
-            
-        }
-
-        public int foundIndex(string username) {
-            //return index suatu username
-            return node_dictionary[username];
-        }
-
-        public bool foundAdj(string username1, string username2) {
-            //melihat apakah sebuah username index berkaitan dengan username index lainnya <mutual>
-            int index1, index2;
-            index1 = foundIndex(username1);
-            index2 = foundIndex(username2);
-
-            if (adjacentMatrix[index1,index2] == true) {
-                return true;
-            }
-            else {
-                return false;
-            }
-        }
-
-        public void addAdj(string username1, string username2) {
-            //add adjacent nodes to adjacentMatrix
-            int index1, index2;
-            index1 = foundIndex(username1);
-            index2 = foundIndex(username2);
-
-            if (!foundAdj(username1,username2)) {
-                adjacentMatrix[index1,index2] = true;
-                adjacentMatrix[index2,index1] = true;
-            }
-        }
-
-        public bool DFS(string currNode, string targetNode, ref bool[] visited, ref string[] rute)
-        {
-            // Cek apakah sudah di target
-            if (currNode == targetNode)
-            {
-                return true;
-            }
-
-            // Copy dulu rute yang udah diambil
-            string[] tempRute = new string[rute.Length + 1];
-            int i;
-            for (i = 0; i < rute.Length; i++)
-            {
-                tempRute[i] = rute[i];
-            }
-            tempRute[i] = currNode;
-
-            // Tandai telah dilewati
-            int idx = this.foundIndex(currNode);
-            visited[idx] = true;
-
-            // Untuk rute sudah sesuai ditemukan
-            bool found = false; 
-
-            foreach (var node in this.node_dictionary)
-            {
-                if (this.foundAdj(currNode,node.Key))
-                {
-                    if (!visited[node.Value])
-                    {
-                        found = DFS(node.Key, targetNode, ref visited, ref tempRute);
-                        if (found)
-                        {
-                            break;
-                        }
-                    }
-                }
-            }
-
-            if (found)
-            {
-                rute = tempRute;
-            }
-            return found;
-        }
-    }
 }
