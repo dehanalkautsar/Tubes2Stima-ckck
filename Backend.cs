@@ -16,43 +16,53 @@ namespace Tubes2Stima_ckck
 
     class ReadFile
     {
-        public static void inputGraphFile(string namaFile)
+        public static Graph inputGraphFile(string namaFile)
         {
             try 
             {
-                
                 string relativePath = @"./data/" + namaFile;  
                 //string path = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), relativePath);
                 // Baca File
                 string[] lines = File.ReadAllLines(relativePath);
 
                 // Hitung jumlah node
-                int nNode = int.Parse(lines[0]);
-                int i = 0;
+                int nNode = int.Parse(lines[0]); // Asumsi ukuran matrix paling besar segini
 
-                //Graph initGraph = new Graph(nNode);
+                Graph initGraph = new Graph(nNode);
 
                 // Tambah daftar node ke dictionary
                 // bisa pake split buat pecahin string
                 string[] pairNode;
+                int idx = 0;
                 foreach (var line in lines)
                 {
                     pairNode = line.Split(' ');
                     if (pairNode.Length == 2)
                     {
+                        // Tambah ke dalam kamus jika belum ada di kamus;
+                        if (initGraph.addToDictionary(pairNode[0],idx))
+                        {
+                            idx++;
+                        }
+                        if (initGraph.addToDictionary(pairNode[1], idx))
+                        {
+                            idx++;
+                        }
+                        // Buat matrix ketetanggaan
+                        initGraph.addAdj(pairNode[0], pairNode[1]);
+
                         Console.WriteLine(pairNode[0] + " " + pairNode[1]);
+                        
                     }
                 }
-
-                // Buat matrix ketetanggaan
-
                 // Return graph
-                //return initGraph;
+                return initGraph;
             }
             catch (Exception e)
             {
                 Console.WriteLine("Exception: " + e.Message + "\n");
-                throw e;
+                Console.WriteLine("Exception: " + e.StackTrace + "\n");
+                return new Graph(0);
             }
             
         }
@@ -66,18 +76,25 @@ namespace Tubes2Stima_ckck
 
         //Constructor
         public Graph(int countNode) {
-            adjacentMatrix = new bool[count_node,count_node];
             this.count_node = countNode;
-            node_dictionary = new Dictionary<string,int>();
+            this.adjacentMatrix = new bool[count_node,count_node];
+            this.node_dictionary = new Dictionary<string, int>();
         }
 
-        public void addToDictionary(string username, int index) {
+        public int getNumberOfNode()
+        {
+            return this.count_node;
+        }
+
+        public bool addToDictionary(string username, int index) {
             //add to dictionary -> <key: username, value: index>
             try {
                 node_dictionary.Add(username,index);
+                return true;
             } catch
             {
-                Console.WriteLine("Node sudah ada di dictionary");
+                //Console.WriteLine("Node sudah ada di dictionary");
+                return false;
             }
             
         }
@@ -111,6 +128,52 @@ namespace Tubes2Stima_ckck
                 adjacentMatrix[index1,index2] = true;
                 adjacentMatrix[index2,index1] = true;
             }
+        }
+
+        public bool DFS(string currNode, string targetNode, ref bool[] visited, ref string[] rute)
+        {
+            // Cek apakah sudah di target
+            if (currNode == targetNode)
+            {
+                return true;
+            }
+
+            // Copy dulu rute yang udah diambil
+            string[] tempRute = new string[rute.Length + 1];
+            int i;
+            for (i = 0; i < rute.Length; i++)
+            {
+                tempRute[i] = rute[i];
+            }
+            tempRute[i] = currNode;
+
+            // Tandai telah dilewati
+            int idx = this.foundIndex(currNode);
+            visited[idx] = true;
+
+            // Untuk rute sudah sesuai ditemukan
+            bool found = false; 
+
+            foreach (var node in this.node_dictionary)
+            {
+                if (this.foundAdj(currNode,node.Key))
+                {
+                    if (!visited[node.Value])
+                    {
+                        found = DFS(node.Key, targetNode, ref visited, ref tempRute);
+                        if (found)
+                        {
+                            break;
+                        }
+                    }
+                }
+            }
+
+            if (found)
+            {
+                rute = tempRute;
+            }
+            return found;
         }
     }
 }
