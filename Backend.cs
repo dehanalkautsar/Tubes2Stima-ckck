@@ -14,24 +14,17 @@ namespace Tubes2Stima_ckck
         public static void TestAzhar()
         {
             Graph initGraph = ReadFile.inputGraphFile("test.txt");
-            bool[] visited = new bool[initGraph.getNumberOfNode()];
-            for (int i = 0; i < visited.Length; i++)
+            try
             {
-                visited[i] = false;
-            }
-            string[] rute = new string[0];
-
-            bool found = initGraph.DFS("A", "H", ref visited, ref rute);
-            if (found)
-            {
-                foreach (var r in rute)
+                string[] rute = initGraph.DFS("A", "H");
+                foreach (var item in rute)
                 {
-                    Console.WriteLine(r);
+                    Console.WriteLine(item);
                 }
             }
-            else
+            catch (Exception e)
             {
-                Console.WriteLine("Not Found");
+                Console.WriteLine(e.Message);
             }
         }
             

@@ -78,24 +78,21 @@ namespace Tubes2Stima_ckck
             }
         }
 
-        public string[] listOfFriend(string username) {
-            List<string> list = new List<string>();
-
-            int index = foundIndex(username);
-
-            for (int i = 0; i < this.getNumberOfNode(); i++) {
-                if (adjacentMatrix[index,i] && index != i) {
-                    foreach (string keyVar in node_dictionary.Keys) {
-                        if (node_dictionary[keyVar] == i) {
-                            list.Add(keyVar);
-                        }
-                    }
-                }
+        public string[] DFS(string currNode, string targetNode)
+        {
+            bool[] visited = new bool[this.getNumberOfNode()];
+            string[] rute = new string[0];
+            bool found = this.doDFS(currNode, targetNode, ref visited, ref rute);
+            if (found) {
+                return rute;
             }
-            return list.ToArray();
+            else {
+                throw new ExceptionGraphRuteDFSNotFound();
+            }
+            
         }
 
-        public bool DFS(string currNode, string targetNode, ref bool[] visited, ref string[] rute)
+        private bool doDFS(string currNode, string targetNode, ref bool[] visited, ref string[] rute)
         {
             // Cek apakah sudah di target
             if (currNode == targetNode)
@@ -125,7 +122,7 @@ namespace Tubes2Stima_ckck
                 {
                     if (!visited[node.Value])
                     {
-                        found = DFS(node.Key, targetNode, ref visited, ref tempRute);
+                        found = doDFS(node.Key, targetNode, ref visited, ref tempRute);
                         if (found)
                         {
                             break;
@@ -139,6 +136,13 @@ namespace Tubes2Stima_ckck
                 rute = tempRute;
             }
             return found;
+        }
+    }
+
+    public class ExceptionGraphRuteDFSNotFound : Exception
+    {
+        public ExceptionGraphRuteDFSNotFound() : base("Graph: DFS rute not found")
+        {
         }
     }
 }
