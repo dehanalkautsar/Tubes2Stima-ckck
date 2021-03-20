@@ -1,4 +1,4 @@
-﻿using System;
+﻿using System; //ada Exception disini
 using System.IO;
 using System.Collections.Generic;
 using System.Linq;
@@ -47,11 +47,11 @@ namespace Tubes2Stima_ckck
                 string relativePath = @"./data/" + namaFile;  
                 //string path = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), relativePath);
                 // Baca File
-                string[] lines = File.ReadAllLines(relativePath);
+                string[] lines = File.ReadAllLines(relativePath); //tiap index dari lines diisi sama baris dlm file
 
                 // Hitung jumlah node
-                int nNode = int.Parse(lines[0]); // Asumsi ukuran matrix paling besar segini
-
+                int nNode = int.Parse(lines[0]); // Asumsi ukuran matrix paling besar segini, itutu jumlah sisi
+                // Converts the string representation of a number to its 32-bit signed integer equivalent.
                 Graph initGraph = new Graph(nNode);
 
                 // Tambah daftar node ke dictionary
@@ -61,7 +61,7 @@ namespace Tubes2Stima_ckck
                 foreach (var line in lines)
                 {
                     pairNode = line.Split(' ');
-                    if (pairNode.Length == 2)
+                    if (pairNode.Length == 2) //kalo isinya cuma satu username, ga dianggap
                     {
                         // Tambah ke dalam kamus jika belum ada di kamus;
                         if (initGraph.addToDictionary(pairNode[0],idx))
@@ -86,7 +86,7 @@ namespace Tubes2Stima_ckck
             {
                 Console.WriteLine("Exception: " + e.Message + "\n");
                 Console.WriteLine("Exception: " + e.StackTrace + "\n");
-                return new Graph(0);
+                return new Graph(0); //karna fungsi public static ini harus return graph
             }
             
         }

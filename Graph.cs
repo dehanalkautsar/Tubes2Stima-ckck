@@ -8,15 +8,15 @@ namespace Tubes2Stima_ckck
 {
     class Graph
     {
-        private bool[,] adjacentMatrix;
-        private int count_node;
-        private Dictionary<string, int> node_dictionary;
+        private bool[,] adjacentMatrix; //nentuin dimensi pake koma
+        private int count_node; //ngitung node yang ada (aktif dan tidak)
+        private Dictionary<string, int> node_dictionary; //nama orang, indeks di adjacent matriks
 
         //Constructor
         public Graph(int countNode)
         {
             this.count_node = countNode;
-            this.adjacentMatrix = new bool[count_node, count_node];
+            this.adjacentMatrix = new bool[count_node, count_node]; //bikin adjacent matriks persegi
             this.node_dictionary = new Dictionary<string, int>();
         }
 
@@ -44,7 +44,7 @@ namespace Tubes2Stima_ckck
         public int foundIndex(string username)
         {
             //return index suatu username
-            return node_dictionary[username];
+            return node_dictionary[username]; //dict[key] ntar return value
         }
 
         public bool foundAdj(string username1, string username2)
