@@ -24,9 +24,9 @@ namespace Tubes2Stima_ckck
             Console.WriteLine("Press Any Key To Continue..");
             Console.ReadLine();
 
-            //Application.EnableVisualStyles();
-            //Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new Form1());
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
+            Application.Run(new Form1());
         }
     }
 }
