@@ -78,6 +78,23 @@ namespace Tubes2Stima_ckck
             }
         }
 
+        public string[] listOfFriend(string username) {
+            List<string> list = new List<string>();
+
+            int index = foundIndex(username);
+
+            for (int i = 0; i < this.getNumberOfNode(); i++) {
+                if (adjacentMatrix[index,i] && index != i) {
+                    foreach (string keyVar in node_dictionary.Keys) {
+                        if (node_dictionary[keyVar] == i) {
+                            list.Add(keyVar);
+                        }
+                    }
+                }
+            }
+            return list.ToArray();
+        }
+
         public bool DFS(string currNode, string targetNode, ref bool[] visited, ref string[] rute)
         {
             // Cek apakah sudah di target
