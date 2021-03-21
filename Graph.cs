@@ -137,8 +137,40 @@ namespace Tubes2Stima_ckck
             }
             return found;
         }
+
+        public bool BFS(string initNode, string targetNode){
+            //buat antrian baru yang bersifat dynamic
+            Queue rute = new Queue();
+            //memasukkan initNode dalam queue
+            rute.Enqueue(initNode);
+            
+            int idxrute; //index array finalrute
+            bool Bfound; //udah goal ke targetNode atau belom
+
+            idxrute = 0;
+            Bfound = false;
+
+            while(!Bfound && rute.Count > 0){ //iterasi sampai ketemu, atau queue abis
+                finalrute[idxrute] = rute.Dequeue(); //dequeue, masukin ke finalrute
+                if (finalrute[idxrute] == targetNode){
+                    Bfound = true;
+                } else {
+                    foreach (var node in this.node_dictionary){
+                    if (this.foundAdj(finalrute[idxrute], node.Key)){
+                        if (!visited[node.Value]){
+                            rute.Enqueue(node.Key);
+                            visited[node.Value] = true;
+                            }
+                        } //else, skip
+                    } 
+                    idxrute++;
+                }   
+            }
+            return Bfound;
+        }
     }
 
+    
     public class ExceptionGraphRuteDFSNotFound : Exception
     {
         public ExceptionGraphRuteDFSNotFound() : base("Graph: DFS rute not found")
