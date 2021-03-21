@@ -1,3 +1,3 @@
 # Tubes2Stima-ckck
 
-###heheheh
+Tugas Besar 2 Mata Kuliah IF2211 Strategi Algoritma
