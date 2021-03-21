@@ -199,7 +199,7 @@ namespace Tubes2Stima_ckck
             
         }
 
-        public bool doBFS(string initNode, string targetNode, ref bool[] visited ,ref string[] finalrute){
+        private bool doBFS(string initNode, string targetNode, ref bool[] visited ,ref string[] finalrute){
             //buat antrian baru yang bersifat dynamic
             Queue<string> rute = new Queue<string>();
             //memasukkan initNode dalam queue

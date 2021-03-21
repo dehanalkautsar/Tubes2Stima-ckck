@@ -28,33 +28,33 @@ namespace Tubes2Stima_ckck
             }
         }
         
-        public static void Testadila(){
-            Graph initGraph = ReadFile.inputGraphFile("test.txt");
-            bool[] visited = new bool[initGraph.getNumberOfNode()];
-            for (int i = 0; i < visited.Length; i++)
-            {
-                visited[i] = false;
-            }
-            String[] finalrute = new String[initGraph.getNumberOfNode() + 1];
-            for (int i = 0; i < finalrute.Length; i++)
-            {
-                finalrute[i] = " ";
-            }
+        //public static void Testadila(){
+        //    Graph initGraph = ReadFile.inputGraphFile("test.txt");
+        //    bool[] visited = new bool[initGraph.getNumberOfNode()];
+        //    for (int i = 0; i < visited.Length; i++)
+        //    {
+        //        visited[i] = false;
+        //    }
+        //    String[] finalrute = new String[initGraph.getNumberOfNode() + 1];
+        //    for (int i = 0; i < finalrute.Length; i++)
+        //    {
+        //        finalrute[i] = " ";
+        //    }
 
-            bool found = initGraph.doBFS("A", "H", ref visited, ref finalrute);
-            if (found){
-                foreach (var r in finalrute)
-                {
-                    if (r != " "){
-                        Console.WriteLine(r);
-                    }   
-                }
-            }
-            else
-            {
-                Console.WriteLine("Not Found");
-            }
-        }        
+        //    bool found = initGraph.doBFS("A", "H", ref visited, ref finalrute);
+        //    if (found){
+        //        foreach (var r in finalrute)
+        //        {
+        //            if (r != " "){
+        //                Console.WriteLine(r);
+        //            }   
+        //        }
+        //    }
+        //    else
+        //    {
+        //        Console.WriteLine("Not Found");
+        //    }
+        //}        
         
     }
 
@@ -111,7 +111,7 @@ namespace Tubes2Stima_ckck
                 }
                 i++;
 
-                if (i == nRelation)
+                if (i > nRelation)
                 {
                     break;
                 }
@@ -132,7 +132,7 @@ namespace Tubes2Stima_ckck
                 }
                 i++;
 
-                if (i == nRelation)
+                if (i > nRelation)
                 {
                     break;
                 }
