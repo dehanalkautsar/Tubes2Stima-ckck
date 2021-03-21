@@ -36,6 +36,7 @@ namespace Tubes2Stima_ckck
             this.adjacentMatrix = new bool[count_node, count_node]; //bikin adjacent matriks persegi
         }
 
+        //GETTERS
         public int getNumberOfNode()
         {
             return this.count_node;
@@ -53,6 +54,16 @@ namespace Tubes2Stima_ckck
             return nodes;
         }
 
+        public string indexToName(int index) { //translate index (values) to uname (keys)
+            foreach (string keyVar in node_dictionary.Keys) {
+                if (node_dictionary[keyVar] == index) {
+                    return keyVar;
+                }
+            }
+            return null;
+        }
+
+        //END OF GETTERS
         public bool addToDictionary(string username, int index)
         {
             //add to dictionary -> <key: username, value: index>
@@ -90,6 +101,11 @@ namespace Tubes2Stima_ckck
             {
                 return false;
             }
+        }
+
+        public bool foundAdj(int index1, int index2) //overloading parameter -> int index
+        {
+            return adjacentMatrix[index1, index2];
         }
 
         public void addAdj(string username1, string username2)
