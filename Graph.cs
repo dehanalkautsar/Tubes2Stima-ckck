@@ -25,6 +25,18 @@ namespace Tubes2Stima_ckck
             return this.count_node;
         }
 
+        public string[] getAllNodes() {
+            // int length_node_dictionary = this.node_dictionary.Count;
+            string[] nodes = new string[this.node_dictionary.Count];
+            int i = 0;
+            foreach (var node in this.node_dictionary) {
+                nodes[i] = node.Key;
+                i++;
+            }
+
+            return nodes;
+        }
+
         public bool addToDictionary(string username, int index)
         {
             //add to dictionary -> <key: username, value: index>
@@ -138,7 +150,24 @@ namespace Tubes2Stima_ckck
             return found;
         }
 
-        public bool BFS(string initNode, string targetNode, ref bool[] visited ,ref string[] finalrute){
+        public string[] BFS(string currNode, string targetNode)
+        {
+            bool[] visited = new bool[this.getNumberOfNode()];
+            string[] rute = new string[this.getNumberOfNode() + 1];
+            for (int i = 0; i < rute.Length; i++) {
+                rute[i] = " ";
+            }
+            bool found = this.doBFS(currNode, targetNode, ref visited, ref rute);
+            if (found) {
+                return rute;
+            }
+            else {
+                throw new ExceptionGraphRuteBFSNotFound();
+            }
+            
+        }
+
+        public bool doBFS(string initNode, string targetNode, ref bool[] visited ,ref string[] finalrute){
             //buat antrian baru yang bersifat dynamic
             Queue<string> rute = new Queue<string>();
             //memasukkan initNode dalam queue
@@ -168,12 +197,67 @@ namespace Tubes2Stima_ckck
             }
             return Bfound;
         }
+
+        public string[] ExploreFriend(string username1, string username2, string pilihan) {
+            Graph initGraph = ReadFile.inputGraphFile("test.txt");
+            if (pilihan == "DFS") {
+                try
+                {
+                    string[] rute = initGraph.DFS(username1, username2);
+                    // foreach (var item in rute)
+                    // {
+                    //     Console.WriteLine(item);
+                    // }
+                    return rute;
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e.Message);
+                    return new string[0];
+                }
+            }
+            else if (pilihan == "BFS") {
+                try
+                {
+                    string[] rute = initGraph.BFS(username1, username2);
+                    int count = 0;
+
+                    while (rute[count] != " ") {
+                        count++;
+                    }
+
+                    string[] finalrute = new string[count];
+
+                    for (int i = 0; i < count; i++) {
+                        finalrute[i] = rute[i];
+                    }
+                    // foreach (var item in rute)
+                    // {
+                    //     Console.WriteLine(item);
+                    // }
+                    return finalrute;
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e.Message);
+                    return new string[0];
+                }
+            }
+            return new string[0];
+        }
     }
 
     
     public class ExceptionGraphRuteDFSNotFound : Exception
     {
         public ExceptionGraphRuteDFSNotFound() : base("Graph: DFS rute not found")
+        {
+        }
+    }
+
+    public class ExceptionGraphRuteBFSNotFound : Exception
+    {
+        public ExceptionGraphRuteBFSNotFound() : base("Graph: BFS rute not found")
         {
         }
     }
