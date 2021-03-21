@@ -48,8 +48,53 @@ namespace Tubes2Stima_ckck
 
                 openedGraph = ReadFile.stringFileToGraph(filelines);
                 labelFileName.Text = "." + filename.Replace(Directory.GetCurrentDirectory(), "");
-            
+
+                //create a form 
+                System.Windows.Forms.Form form = new System.Windows.Forms.Form();
+                //create a viewer object 
+                Microsoft.Msagl.GraphViewerGdi.GViewer viewer = new Microsoft.Msagl.GraphViewerGdi.GViewer();
+                //create a graph object 
+                Microsoft.Msagl.Drawing.Graph graph = new Microsoft.Msagl.Drawing.Graph("graph");
+                //create the graph content 
+                foreach (var node in openedGraph.getAllNodes())
+                {
+                    var simpul = graph.AddNode(node);
+                    simpul.Attr.Shape = Shape.Circle;
+                }
+
+                int nNode = openedGraph.getNumberOfNode(); 
+                for (int i = 0; i < nNode; i++)
+                {
+                    for (int j = 0; j < nNode; j++)
+                    {
+                        //if (openedGraph.foundAdj(openedGraph.))
+                        //{
+
+                        //}
+                    }
+                }
+
+                //graph.AddNode("A");
+                //var Edge = graph.AddEdge("47", "52");
+                //{
+                //    Edge.Attr.ArrowheadAtTarget = ArrowStyle.None;
+                //    Edge.Attr.ArrowheadAtSource = ArrowStyle.None;
+                //    //ArrowStyle.
+                //}
+
+                viewer.Graph = graph;
+
+                //associate the viewer with the form 
+                visualGraph.SuspendLayout();
+                viewer.Dock = System.Windows.Forms.DockStyle.Fill;
+                visualGraph.Controls.Add(viewer);
+                visualGraph.ResumeLayout();
                 
+
+                foreach (var node in openedGraph.getAllNodes())
+                {
+                    Console.WriteLine(node);
+                }
             
             }
         }
