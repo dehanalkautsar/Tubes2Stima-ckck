@@ -41,7 +41,7 @@ namespace Tubes2Stima_ckck
                 finalrute[i] = " ";
             }
 
-            bool found = initGraph.BFS("A", "H", ref visited, ref finalrute);
+            bool found = initGraph.doBFS("A", "H", ref visited, ref finalrute);
             if (found){
                 foreach (var r in finalrute)
                 {
