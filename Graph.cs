@@ -13,11 +13,27 @@ namespace Tubes2Stima_ckck
         private Dictionary<string, int> node_dictionary; //nama orang, indeks di adjacent matriks
 
         //Constructor
+
+        // Tanpa adjacent Matrix
+        public Graph()
+        {
+            this.count_node = 0;
+            this.adjacentMatrix = new bool[0, 0];
+            this.node_dictionary = new Dictionary<string, int>();
+        }
+
+        // Dengan adjacent Matrix
         public Graph(int countNode)
         {
             this.count_node = countNode;
             this.adjacentMatrix = new bool[count_node, count_node]; //bikin adjacent matriks persegi
             this.node_dictionary = new Dictionary<string, int>();
+        }
+
+        public void initAdjacentMatrix(int countNode)
+        {
+            this.count_node = countNode;
+            this.adjacentMatrix = new bool[count_node, count_node]; //bikin adjacent matriks persegi
         }
 
         public int getNumberOfNode()

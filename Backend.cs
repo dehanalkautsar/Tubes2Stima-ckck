@@ -86,7 +86,7 @@ namespace Tubes2Stima_ckck
             // Hitung jumlah node
             int nRelation = int.Parse(fileLines[0]); // Asumsi ukuran matrix paling besar segini, itutu jumlah sisi
                                              // Converts the string representation of a number to its 32-bit signed integer equivalent.
-            Graph initGraph = new Graph(nRelation);
+            Graph initGraph = new Graph();
 
             // Tambah daftar node ke dictionary
             // bisa pake split buat pecahin string
@@ -107,6 +107,23 @@ namespace Tubes2Stima_ckck
                     {
                         idx++;
                     }
+
+                }
+                i++;
+
+                if (i == nRelation)
+                {
+                    break;
+                }
+            }
+
+            i = 0;
+            initGraph.initAdjacentMatrix(idx);
+            foreach (var line in fileLines)
+            {
+                pairNode = line.Split(' ');
+                if (pairNode.Length == 2) //kalo isinya cuma satu username, ga dianggap
+                {
                     // Buat matrix ketetanggaan
                     initGraph.addAdj(pairNode[0], pairNode[1]);
 

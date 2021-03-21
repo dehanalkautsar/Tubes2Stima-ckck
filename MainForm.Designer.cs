@@ -37,8 +37,8 @@ namespace Tubes2Stima_ckck
             this.BrowseButton = new System.Windows.Forms.Button();
             this.labelFileName = new System.Windows.Forms.Label();
             this.visualGraph = new System.Windows.Forms.Panel();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.radioButtonBFS = new System.Windows.Forms.RadioButton();
+            this.radioButtonDFS = new System.Windows.Forms.RadioButton();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
@@ -46,7 +46,7 @@ namespace Tubes2Stima_ckck
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
+            this.buttonSubmit = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -129,29 +129,31 @@ namespace Tubes2Stima_ckck
             this.visualGraph.Size = new System.Drawing.Size(510, 269);
             this.visualGraph.TabIndex = 9;
             // 
-            // radioButton1
+            // radioButtonBFS
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Font = new System.Drawing.Font("Comic Sans MS", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton1.Location = new System.Drawing.Point(177, 124);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(58, 23);
-            this.radioButton1.TabIndex = 10;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "BFS";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.radioButtonBFS.AutoSize = true;
+            this.radioButtonBFS.Font = new System.Drawing.Font("Comic Sans MS", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioButtonBFS.Location = new System.Drawing.Point(177, 124);
+            this.radioButtonBFS.Name = "radioButtonBFS";
+            this.radioButtonBFS.Size = new System.Drawing.Size(58, 23);
+            this.radioButtonBFS.TabIndex = 10;
+            this.radioButtonBFS.TabStop = true;
+            this.radioButtonBFS.Text = "BFS";
+            this.radioButtonBFS.UseVisualStyleBackColor = true;
+            this.radioButtonBFS.CheckedChanged += new System.EventHandler(this.radioButtonBFS_CheckedChanged);
             // 
-            // radioButton2
+            // radioButtonDFS
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Font = new System.Drawing.Font("Comic Sans MS", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton2.Location = new System.Drawing.Point(247, 124);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(59, 23);
-            this.radioButton2.TabIndex = 11;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "DFS";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.radioButtonDFS.AutoSize = true;
+            this.radioButtonDFS.Font = new System.Drawing.Font("Comic Sans MS", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioButtonDFS.Location = new System.Drawing.Point(247, 124);
+            this.radioButtonDFS.Name = "radioButtonDFS";
+            this.radioButtonDFS.Size = new System.Drawing.Size(59, 23);
+            this.radioButtonDFS.TabIndex = 11;
+            this.radioButtonDFS.TabStop = true;
+            this.radioButtonDFS.Text = "DFS";
+            this.radioButtonDFS.UseVisualStyleBackColor = true;
+            this.radioButtonDFS.CheckedChanged += new System.EventHandler(this.radioButtonDFS_CheckedChanged);
             // 
             // label7
             // 
@@ -222,20 +224,21 @@ namespace Tubes2Stima_ckck
             this.label11.TabIndex = 18;
             this.label11.Text = "Friends Recomendation for";
             // 
-            // button3
+            // buttonSubmit
             // 
-            this.button3.Font = new System.Drawing.Font("Comic Sans MS", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(18, 538);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(112, 30);
-            this.button3.TabIndex = 19;
-            this.button3.Text = "Submit";
-            this.button3.UseVisualStyleBackColor = true;
+            this.buttonSubmit.Font = new System.Drawing.Font("Comic Sans MS", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonSubmit.Location = new System.Drawing.Point(18, 538);
+            this.buttonSubmit.Name = "buttonSubmit";
+            this.buttonSubmit.Size = new System.Drawing.Size(112, 30);
+            this.buttonSubmit.TabIndex = 19;
+            this.buttonSubmit.Text = "Submit";
+            this.buttonSubmit.UseVisualStyleBackColor = true;
+            this.buttonSubmit.Click += new System.EventHandler(this.buttonSubmit_Click);
             // 
             // MainForm
             // 
             this.ClientSize = new System.Drawing.Size(534, 766);
-            this.Controls.Add(this.button3);
+            this.Controls.Add(this.buttonSubmit);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.comboBox2);
             this.Controls.Add(this.comboBox1);
@@ -243,8 +246,8 @@ namespace Tubes2Stima_ckck
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.radioButton2);
-            this.Controls.Add(this.radioButton1);
+            this.Controls.Add(this.radioButtonDFS);
+            this.Controls.Add(this.radioButtonBFS);
             this.Controls.Add(this.visualGraph);
             this.Controls.Add(this.labelFileName);
             this.Controls.Add(this.BrowseButton);
@@ -272,8 +275,8 @@ namespace Tubes2Stima_ckck
         private System.Windows.Forms.Button BrowseButton;
         private System.Windows.Forms.Label labelFileName;
         private System.Windows.Forms.Panel visualGraph;
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.RadioButton radioButtonBFS;
+        private System.Windows.Forms.RadioButton radioButtonDFS;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
@@ -281,7 +284,7 @@ namespace Tubes2Stima_ckck
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button buttonSubmit;
     }
 }
 

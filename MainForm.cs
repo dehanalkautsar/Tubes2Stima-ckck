@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Msagl.Drawing;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -14,6 +15,7 @@ namespace Tubes2Stima_ckck
     public partial class MainForm : Form
     {
         private Graph openedGraph;
+        private string method = "None";
 
         public MainForm()
         {
@@ -46,8 +48,13 @@ namespace Tubes2Stima_ckck
 
                 openedGraph = ReadFile.stringFileToGraph(filelines);
                 labelFileName.Text = "." + filename.Replace(Directory.GetCurrentDirectory(), "");
+            
+                
+            
             }
         }
+
+
 
 
         private void label2_Click(object sender, EventArgs e)
@@ -73,6 +80,55 @@ namespace Tubes2Stima_ckck
         private void button2_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void radioButtonBFS_CheckedChanged(object sender, EventArgs e)
+        {
+            method = "BFS";
+        }
+
+        private void radioButtonDFS_CheckedChanged(object sender, EventArgs e)
+        {
+            method = "DFS";
+        }
+
+        private void buttonSubmit_Click(object sender, EventArgs e)
+        {
+            //create a form 
+            System.Windows.Forms.Form form = new System.Windows.Forms.Form();
+            //create a viewer object 
+            Microsoft.Msagl.GraphViewerGdi.GViewer viewer = new Microsoft.Msagl.GraphViewerGdi.GViewer();
+            //create a graph object 
+            Microsoft.Msagl.Drawing.Graph graph = new Microsoft.Msagl.Drawing.Graph("graph");
+            //create the graph content 
+            //graph.AddNode("A");
+            //graph.
+            var Edge = graph.AddEdge("47", "52");
+            {
+                Edge.Attr.ArrowheadAtTarget = ArrowStyle.None;
+                Edge.Attr.ArrowheadAtSource = ArrowStyle.None;
+                //ArrowStyle.
+            }
+            //graph.AddEdge("A", "B");
+            //graph.AddEdge("B", "C");
+            //graph.AddEdge("A", "C").Attr.Color = Microsoft.Msagl.Drawing.Color.Green;
+            //graph.FindNode("A").Attr.FillColor = Microsoft.Msagl.Drawing.Color.Magenta;
+            //graph.FindNode("B").Attr.FillColor = Microsoft.Msagl.Drawing.Color.MistyRose;
+            //Microsoft.Msagl.Drawing.Node c = graph.FindNode("C");
+            //c.Attr.FillColor = Microsoft.Msagl.Drawing.Color.PaleGreen;
+            //c.Attr.Shape = Microsoft.Msagl.Drawing.Shape.Diamond;
+            //bind the graph to the viewer 
+            viewer.Graph = graph;
+            //associate the viewer with the form 
+            visualGraph.SuspendLayout();
+            //form.SuspendLayout();
+            viewer.Dock = System.Windows.Forms.DockStyle.Fill;
+            visualGraph.Controls.Add(viewer);
+            //form.Controls.Add(viewer);
+            visualGraph.ResumeLayout();
+            //form.ResumeLayout();
+            //show the form 
+            //form.ShowDialog();
         }
     }
 }
