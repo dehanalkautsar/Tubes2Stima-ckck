@@ -25,6 +25,18 @@ namespace Tubes2Stima_ckck
             return this.count_node;
         }
 
+        public string[] getAllNodes() {
+            // int length_node_dictionary = this.node_dictionary.Count;
+            string[] nodes = new string[this.node_dictionary.Count];
+            int i = 0;
+            foreach (var node in this.node_dictionary) {
+                nodes[i] = node.Key;
+                i++;
+            }
+
+            return nodes;
+        }
+
         public bool addToDictionary(string username, int index)
         {
             //add to dictionary -> <key: username, value: index>
