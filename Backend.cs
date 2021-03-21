@@ -67,39 +67,9 @@ namespace Tubes2Stima_ckck
                 string relativePath = @"./data/" + namaFile;  
                 //string path = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), relativePath);
                 // Baca File
-                string[] lines = File.ReadAllLines(relativePath); //tiap index dari lines diisi sama baris dlm file
+                string[] fileLines = File.ReadAllLines(relativePath); //tiap index dari lines diisi sama baris dlm file
 
-                // Hitung jumlah node
-                int nNode = int.Parse(lines[0]); // Asumsi ukuran matrix paling besar segini, itutu jumlah sisi
-                // Converts the string representation of a number to its 32-bit signed integer equivalent.
-                Graph initGraph = new Graph(nNode);
-
-                // Tambah daftar node ke dictionary
-                // bisa pake split buat pecahin string
-                string[] pairNode;
-                int idx = 0;
-                foreach (var line in lines)
-                {
-                    pairNode = line.Split(' ');
-                    if (pairNode.Length == 2) //kalo isinya cuma satu username, ga dianggap
-                    {
-                        // Tambah ke dalam kamus jika belum ada di kamus;
-                        if (initGraph.addToDictionary(pairNode[0],idx))
-                        {
-                            idx++;
-                        }
-                        if (initGraph.addToDictionary(pairNode[1], idx))
-                        {
-                            idx++;
-                        }
-                        // Buat matrix ketetanggaan
-                        initGraph.addAdj(pairNode[0], pairNode[1]);
-
-                        Console.WriteLine(pairNode[0] + " " + pairNode[1]);
-                        
-                    }
-                }
-                // Return graph
+                Graph initGraph = stringFileToGraph(fileLines);
                 return initGraph;
             }
             catch (Exception e)
@@ -110,7 +80,48 @@ namespace Tubes2Stima_ckck
             }
             
         }
+
+        public static Graph stringFileToGraph(string[] fileLines)
+        {
+            // Hitung jumlah node
+            int nRelation = int.Parse(fileLines[0]); // Asumsi ukuran matrix paling besar segini, itutu jumlah sisi
+                                             // Converts the string representation of a number to its 32-bit signed integer equivalent.
+            Graph initGraph = new Graph(nRelation);
+
+            // Tambah daftar node ke dictionary
+            // bisa pake split buat pecahin string
+            string[] pairNode;
+            int idx = 0;
+            int i = 0;
+            foreach (var line in fileLines)
+            {
+                pairNode = line.Split(' ');
+                if (pairNode.Length == 2) //kalo isinya cuma satu username, ga dianggap
+                {
+                    // Tambah ke dalam kamus jika belum ada di kamus;
+                    if (initGraph.addToDictionary(pairNode[0], idx))
+                    {
+                        idx++;
+                    }
+                    if (initGraph.addToDictionary(pairNode[1], idx))
+                    {
+                        idx++;
+                    }
+                    // Buat matrix ketetanggaan
+                    initGraph.addAdj(pairNode[0], pairNode[1]);
+
+                    Console.WriteLine(pairNode[0] + " " + pairNode[1]);
+
+                }
+                i++;
+
+                if (i == nRelation)
+                {
+                    break;
+                }
+            }
+            // Return graph
+            return initGraph;
+        }
     }
-
-
 }
