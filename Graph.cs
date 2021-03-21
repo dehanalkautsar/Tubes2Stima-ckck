@@ -138,9 +138,9 @@ namespace Tubes2Stima_ckck
             return found;
         }
 
-        public bool BFS(string initNode, string targetNode){
+        public bool BFS(string initNode, string targetNode, ref bool[] visited ,ref string[] finalrute){
             //buat antrian baru yang bersifat dynamic
-            Queue rute = new Queue();
+            Queue<string> rute = new Queue<string>();
             //memasukkan initNode dalam queue
             rute.Enqueue(initNode);
             
