@@ -63,7 +63,7 @@ namespace Tubes2Stima_ckck
             pilihan = Console.ReadLine();
             try
             {
-                string[] rute = initGraph.ExploreFriend("A", "H", pilihan);
+                string[] rute = initGraph.ExploreFriend("A", "H", pilihan, initGraph);
                 foreach (var item in rute)
                 {
                     Console.WriteLine(item);

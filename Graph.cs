@@ -279,8 +279,8 @@ namespace Tubes2Stima_ckck
             return Bfound;
         }
 
-        public string[] ExploreFriend(string username1, string username2, string pilihan) {
-            Graph initGraph = ReadFile.inputGraphFile("test.txt");
+        public string[] ExploreFriend(string username1, string username2, string pilihan, Graph initGraph) {
+     
             if (pilihan == "DFS") {
                 try
                 {
