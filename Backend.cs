@@ -55,6 +55,13 @@ namespace Tubes2Stima_ckck
         //        Console.WriteLine("Not Found");
         //    }
         //}
+
+        public static void TestAdila()
+        {
+            Graph initGraph = ReadFile.inputGraphFile("test.txt");
+            //initGraph.mutualFriend("A", "F", initGraph).ForEach(i => Console.Write("{0}\t", i));
+            initGraph.allMutual("A");
+        }
         
         public static void TestDehan()
         {

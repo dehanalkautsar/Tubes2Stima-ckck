@@ -19,16 +19,16 @@ namespace Tubes2Stima_ckck
             Console.WriteLine("Hello World");
 
             //Backend.TestAzhar();
-            //Backend.Testadila();
-            Backend.TestDehan();
+            Backend.TestAdila();
+            //Backend.TestDehan();
 
 
             Console.WriteLine("Press Any Key To Continue..");
             Console.ReadLine();
 
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MainForm());
+            //Application.EnableVisualStyles();
+            //Application.SetCompatibleTextRenderingDefault(false);
+            //Application.Run(new MainForm());
         }
     }
 }

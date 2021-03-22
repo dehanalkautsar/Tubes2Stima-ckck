@@ -278,13 +278,85 @@ namespace Tubes2Stima_ckck
             }
             return Bfound;
         }
+        public List<string> mutualFriend(string username1, string username2, Graph initGraph)
+        {
+            List<string> friend1 = new List<string>();
+            List<string> friend2 = new List<string>();
+            List<string> mutual = new List<string>();
 
-        public string[] ExploreFriend(string username1, string username2, string pilihan, Graph initGraph) {
+            int nNode = initGraph.getNumberOfNode();
+            int idx1 = foundIndex(username1);
+            int idx2 = foundIndex(username2);
+
+            for (int i = 0; i < nNode; i++)
+            {
+                if (initGraph.foundAdj(idx1, i))
+                {
+                    friend1.Add(indexToName(i)); 
+                }
+            }
+
+            for (int i = 0; i < nNode; i++)
+            {
+                if (initGraph.foundAdj(idx2, i))
+                {
+                    friend2.Add(indexToName(i)); 
+                }
+            }
+
+            //friend1.ForEach(i => Console.Write("{0}\t", i));
+            //Console.WriteLine();
+            //friend2.ForEach(i => Console.Write("{0}\t", i));
+
+            foreach(string item in friend1)
+            {
+                if (friend2.Contains(item))
+                {
+                    mutual.Add(item);
+                }
+            }
+            //Console.WriteLine();
+            //mutual.ForEach(i => Console.Write("{0}\t", i));
+            return mutual;
+        }
+
+        public Dictionary<string, List<string>> allMutual(string username1)
+        {
+            List<string> friend = new List<string>();
+            foreach(var node in this.node_dictionary)
+            {
+                if (this.foundAdj(username1, node.Key))
+                {
+                    friend.Add(node.Key);
+                }
+            }
+            Dictionary<string, List<string>> mutual = new Dictionary<string, List<string>>();
+            foreach(var node in this.node_dictionary)
+            {
+                List<string> mutualT = new List<string>();
+                mutualT = this.mutualFriend(username1, node.Key, this);
+
+                if(mutualT.Count != 0 && node.Key != username1 && !friend.Contains(node.Key))
+                {
+                    //Console.WriteLine(node.Key);
+                    //Console.WriteLine("mutual:");
+                    //mutualT.ForEach(i => Console.Write("{0}\t", i));
+                    //Console.WriteLine();
+                    mutual[node.Key] = mutualT;
+                }
+                
+            } return mutual;
+
+        }
+
+        //public bool isMutual
+
+        public string[] ExploreFriend(string username1, string username2, string pilihan) {
      
             if (pilihan == "DFS") {
                 try
                 {
-                    string[] rute = initGraph.DFS(username1, username2);
+                    string[] rute = this.DFS(username1, username2);
                     // foreach (var item in rute)
                     // {
                     //     Console.WriteLine(item);
@@ -300,7 +372,7 @@ namespace Tubes2Stima_ckck
             else if (pilihan == "BFS") {
                 try
                 {
-                    string[] rute = initGraph.BFS(username1, username2);
+                    string[] rute = this.BFS(username1, username2);
                     
                     //int count = 0;
 
