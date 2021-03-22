@@ -23,12 +23,12 @@ namespace Tubes2Stima_ckck
             //Backend.TestDehan();
 
 
-            Console.WriteLine("Press Any Key To Continue..");
-            Console.ReadLine();
+            //Console.WriteLine("Press Any Key To Continue..");
+            //Console.ReadLine();
 
-            //Application.EnableVisualStyles();
-            //Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new MainForm());
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
+            Application.Run(new MainForm());
         }
     }
 }

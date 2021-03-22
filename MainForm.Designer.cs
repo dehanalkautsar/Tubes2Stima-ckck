@@ -36,17 +36,18 @@ namespace Tubes2Stima_ckck
             this.label5 = new System.Windows.Forms.Label();
             this.BrowseButton = new System.Windows.Forms.Button();
             this.labelFileName = new System.Windows.Forms.Label();
-            this.visualGraph = new System.Windows.Forms.Panel();
+            this.PanelGraphVisualizer = new System.Windows.Forms.Panel();
             this.radioButtonBFS = new System.Windows.Forms.RadioButton();
             this.radioButtonDFS = new System.Windows.Forms.RadioButton();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.label11 = new System.Windows.Forms.Label();
+            this.comboBoxInitial = new System.Windows.Forms.ComboBox();
+            this.comboBoxTarget = new System.Windows.Forms.ComboBox();
             this.buttonSubmit = new System.Windows.Forms.Button();
+            this.testButton = new System.Windows.Forms.Button();
+            this.resetButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -56,7 +57,7 @@ namespace Tubes2Stima_ckck
             this.label1.Font = new System.Drawing.Font("Comic Sans MS", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(12, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(510, 52);
+            this.label1.Size = new System.Drawing.Size(508, 52);
             this.label1.TabIndex = 0;
             this.label1.Text = "Dehan Mencari Teman";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -120,14 +121,14 @@ namespace Tubes2Stima_ckck
             this.labelFileName.Size = new System.Drawing.Size(0, 20);
             this.labelFileName.TabIndex = 6;
             // 
-            // visualGraph
+            // PanelGraphVisualizer
             // 
-            this.visualGraph.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.PanelGraphVisualizer.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.visualGraph.Location = new System.Drawing.Point(12, 170);
-            this.visualGraph.Name = "visualGraph";
-            this.visualGraph.Size = new System.Drawing.Size(510, 269);
-            this.visualGraph.TabIndex = 9;
+            this.PanelGraphVisualizer.Location = new System.Drawing.Point(12, 170);
+            this.PanelGraphVisualizer.Name = "PanelGraphVisualizer";
+            this.PanelGraphVisualizer.Size = new System.Drawing.Size(508, 276);
+            this.PanelGraphVisualizer.TabIndex = 9;
             // 
             // radioButtonBFS
             // 
@@ -194,35 +195,29 @@ namespace Tubes2Stima_ckck
             this.label10.TabIndex = 15;
             this.label10.Text = ":";
             // 
-            // comboBox1
+            // comboBoxInitial
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "A"});
-            this.comboBox1.Location = new System.Drawing.Point(214, 469);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(91, 24);
-            this.comboBox1.TabIndex = 16;
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            this.comboBoxInitial.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.comboBoxInitial.FormattingEnabled = true;
+            this.comboBoxInitial.Location = new System.Drawing.Point(214, 469);
+            this.comboBoxInitial.MaximumSize = new System.Drawing.Size(500, 0);
+            this.comboBoxInitial.Name = "comboBoxInitial";
+            this.comboBoxInitial.Size = new System.Drawing.Size(176, 24);
+            this.comboBoxInitial.TabIndex = 16;
+            this.comboBoxInitial.SelectedIndexChanged += new System.EventHandler(this.comboBoxInitial_SelectedIndexChanged);
             // 
-            // comboBox2
+            // comboBoxTarget
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
-            "A"});
-            this.comboBox2.Location = new System.Drawing.Point(214, 503);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(91, 24);
-            this.comboBox2.TabIndex = 17;
-            // 
-            // label11
-            // 
-            this.label11.Font = new System.Drawing.Font("Comic Sans MS", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(14, 574);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(508, 23);
-            this.label11.TabIndex = 18;
-            this.label11.Text = "Friends Recomendation for";
+            this.comboBoxTarget.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.comboBoxTarget.FormattingEnabled = true;
+            this.comboBoxTarget.Location = new System.Drawing.Point(214, 503);
+            this.comboBoxTarget.MaximumSize = new System.Drawing.Size(500, 0);
+            this.comboBoxTarget.Name = "comboBoxTarget";
+            this.comboBoxTarget.Size = new System.Drawing.Size(176, 24);
+            this.comboBoxTarget.TabIndex = 17;
+            this.comboBoxTarget.SelectedIndexChanged += new System.EventHandler(this.comboBoxTarget_SelectedIndexChanged);
             // 
             // buttonSubmit
             // 
@@ -235,20 +230,41 @@ namespace Tubes2Stima_ckck
             this.buttonSubmit.UseVisualStyleBackColor = true;
             this.buttonSubmit.Click += new System.EventHandler(this.buttonSubmit_Click);
             // 
+            // testButton
+            // 
+            this.testButton.Location = new System.Drawing.Point(423, 92);
+            this.testButton.Name = "testButton";
+            this.testButton.Size = new System.Drawing.Size(75, 23);
+            this.testButton.TabIndex = 20;
+            this.testButton.Text = "test";
+            this.testButton.UseVisualStyleBackColor = true;
+            this.testButton.Click += new System.EventHandler(this.testButton_Click);
+            // 
+            // resetButton
+            // 
+            this.resetButton.Location = new System.Drawing.Point(423, 122);
+            this.resetButton.Name = "resetButton";
+            this.resetButton.Size = new System.Drawing.Size(75, 23);
+            this.resetButton.TabIndex = 21;
+            this.resetButton.Text = "reset";
+            this.resetButton.UseVisualStyleBackColor = true;
+            this.resetButton.Click += new System.EventHandler(this.resetButton_Click);
+            // 
             // MainForm
             // 
-            this.ClientSize = new System.Drawing.Size(534, 766);
+            this.ClientSize = new System.Drawing.Size(532, 583);
+            this.Controls.Add(this.resetButton);
+            this.Controls.Add(this.testButton);
             this.Controls.Add(this.buttonSubmit);
-            this.Controls.Add(this.label11);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.comboBoxTarget);
+            this.Controls.Add(this.comboBoxInitial);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.radioButtonDFS);
             this.Controls.Add(this.radioButtonBFS);
-            this.Controls.Add(this.visualGraph);
+            this.Controls.Add(this.PanelGraphVisualizer);
             this.Controls.Add(this.labelFileName);
             this.Controls.Add(this.BrowseButton);
             this.Controls.Add(this.label5);
@@ -256,7 +272,9 @@ namespace Tubes2Stima_ckck
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.MinimumSize = new System.Drawing.Size(550, 630);
             this.Name = "MainForm";
+            this.Text = "Tubes Brow";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -274,17 +292,18 @@ namespace Tubes2Stima_ckck
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button BrowseButton;
         private System.Windows.Forms.Label labelFileName;
-        private System.Windows.Forms.Panel visualGraph;
+        private System.Windows.Forms.Panel PanelGraphVisualizer;
         private System.Windows.Forms.RadioButton radioButtonBFS;
         private System.Windows.Forms.RadioButton radioButtonDFS;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.ComboBox comboBoxInitial;
+        private System.Windows.Forms.ComboBox comboBoxTarget;
         private System.Windows.Forms.Button buttonSubmit;
+        private System.Windows.Forms.Button testButton;
+        private System.Windows.Forms.Button resetButton;
     }
 }
 
