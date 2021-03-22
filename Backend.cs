@@ -55,6 +55,13 @@ namespace Tubes2Stima_ckck
         //        Console.WriteLine("Not Found");
         //    }
         //}
+
+        public static void TestAdila()
+        {
+            Graph initGraph = ReadFile.inputGraphFile("test.txt");
+            //initGraph.mutualFriend("A", "F", initGraph).ForEach(i => Console.Write("{0}\t", i));
+            initGraph.allMutual("A");
+        }
         
         public static void TestDehan()
         {
@@ -64,13 +71,8 @@ namespace Tubes2Stima_ckck
             pilihan = Console.ReadLine();
             try
             {
-                string[] rute = initGraph.ExploreFriend("A", "H", pilihan, initGraph);
-                foreach (var item in rute)
-                {
-                    Console.Write(item);
-                    Console.Write(" ");
-                }
-                Console.WriteLine();
+                string[] rute = initGraph.ExploreFriend("A", "H", pilihan);
+                Graph.printRute(rute);
             }
             catch (Exception e)
             {
