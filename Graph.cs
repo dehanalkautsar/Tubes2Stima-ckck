@@ -304,10 +304,6 @@ namespace Tubes2Stima_ckck
                 }
             }
 
-            //friend1.ForEach(i => Console.Write("{0}\t", i));
-            //Console.WriteLine();
-            //friend2.ForEach(i => Console.Write("{0}\t", i));
-
             foreach(string item in friend1)
             {
                 if (friend2.Contains(item))
@@ -315,8 +311,6 @@ namespace Tubes2Stima_ckck
                     mutual.Add(item);
                 }
             }
-            //Console.WriteLine();
-            //mutual.ForEach(i => Console.Write("{0}\t", i));
             return mutual;
         }
 
@@ -338,15 +332,24 @@ namespace Tubes2Stima_ckck
 
                 if(mutualT.Count != 0 && node.Key != username1 && !friend.Contains(node.Key))
                 {
-                    //Console.WriteLine(node.Key);
-                    //Console.WriteLine("mutual:");
-                    //mutualT.ForEach(i => Console.Write("{0}\t", i));
-                    //Console.WriteLine();
                     mutual[node.Key] = mutualT;
                 }
                 
             } return mutual;
 
+        }
+
+        public void displayFriendR (Dictionary<string, List<string>> mutual)
+        {
+
+            Console.WriteLine("Sorted by Value");  
+            Console.WriteLine("=============");  
+            foreach (KeyValuePair<string, List<string>> author in mutual.OrderByDescending(key => key.Value.Count()))  
+            {  
+                Console.WriteLine("Key: {0}, Value: {1}", author.Key, author.Value.Count());
+                
+            }
+  
         }
 
         //public bool isMutual
@@ -373,27 +376,7 @@ namespace Tubes2Stima_ckck
                 try
                 {
                     string[] rute = this.BFS(username1, username2);
-                    
-                    //int count = 0;
 
-                    //for (int i = 0; i < rute.Length; i++)
-                    //{
-                    //    Console.WriteLine(rute[i]);
-                    //}
-
-                    //while (rute[count] != " ") {
-                    //    count++;
-                    //}
-                    ////Console.WriteLine("check");
-                    //string[] finalrute = new string[count];
-
-                    //for (int i = 0; i < count; i++) {
-                    //    finalrute[i] = rute[i];
-                    //}
-                    //// foreach (var item in rute)
-                    //// {
-                    ////     Console.WriteLine(item);
-                    //// }
                     return rute;
                 }
                 catch (Exception e)

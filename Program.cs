@@ -19,7 +19,7 @@ namespace Tubes2Stima_ckck
             Console.WriteLine("Hello World");
 
             //Backend.TestAzhar();
-            Backend.TestAdila();
+            //Backend.TestAdila();
             //Backend.TestDehan();
 
 
