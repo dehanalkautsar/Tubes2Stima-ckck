@@ -60,14 +60,17 @@ namespace Tubes2Stima_ckck
         {
             Graph initGraph = ReadFile.inputGraphFile("test.txt");
             string pilihan;
+            Console.Write("Masukkan Pilihan Metode (BFS/DFS): ");
             pilihan = Console.ReadLine();
             try
             {
                 string[] rute = initGraph.ExploreFriend("A", "H", pilihan, initGraph);
                 foreach (var item in rute)
                 {
-                    Console.WriteLine(item);
+                    Console.Write(item);
+                    Console.Write(" ");
                 }
+                Console.WriteLine();
             }
             catch (Exception e)
             {
@@ -146,7 +149,7 @@ namespace Tubes2Stima_ckck
                     // Buat matrix ketetanggaan
                     initGraph.addAdj(pairNode[0], pairNode[1]);
 
-                    Console.WriteLine(pairNode[0] + " " + pairNode[1]);
+                    //Console.WriteLine(pairNode[0] + " " + pairNode[1]);
 
                 }
                 i++;

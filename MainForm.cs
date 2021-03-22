@@ -15,8 +15,10 @@ namespace Tubes2Stima_ckck
     public partial class MainForm : Form
     {
         private Graph openedGraph;
-        Microsoft.Msagl.Drawing.Graph graphVisualizer;
+        private Microsoft.Msagl.Drawing.Graph graphVisualizer;
         private string pilihanMode = "None";
+        private string initialNode = "";
+        private string targetNode = "";
 
         public MainForm()
         {
@@ -73,37 +75,63 @@ namespace Tubes2Stima_ckck
 
             if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
-                string filename = openFileDialog.FileName;
-                string[] filelines = File.ReadAllLines(filename);
 
+                // Baca Graph dari file yang dipilih
+                string path = openFileDialog.FileName;
+                string[] filelines = File.ReadAllLines(path);
+
+                // Buat variabel Graph yang sedang dibuka
                 openedGraph = ReadFile.stringFileToGraph(filelines);
-                labelFileName.Text = "." + filename.Replace(Directory.GetCurrentDirectory(), "");
+
+                // Nama label fileName
+                labelFileName.Text = openFileDialog.SafeFileName;
 
                 //create a form 
                 System.Windows.Forms.Form form = new System.Windows.Forms.Form();
                 //create a viewer object 
                 Microsoft.Msagl.GraphViewerGdi.GViewer viewer = new Microsoft.Msagl.GraphViewerGdi.GViewer();
-                //create a graph object 
+                //create a graph object
                 ConstructGraphVisualizer();
                 Microsoft.Msagl.Drawing.Graph graph = graphVisualizer;
 
+                
                 viewer.Graph = graph;
                 //associate the viewer with the form 
-                visualGraph.SuspendLayout();
+                PanelGraphVisualizer.SuspendLayout();
                 viewer.Dock = System.Windows.Forms.DockStyle.Fill;
-                visualGraph.Controls.Add(viewer);
-                visualGraph.ResumeLayout();
+                PanelGraphVisualizer.Controls.Clear();
+                PanelGraphVisualizer.Controls.Add(viewer);
+                PanelGraphVisualizer.ResumeLayout();
                 
 
                 foreach (var node in openedGraph.getAllNodes())
                 {
                     Console.WriteLine(node);
                 }
-            
+
+                ComboBoxInitialNodeInit();
+                ComboBoxTargetNodeInit();
+
             }
         }
 
+        private void ComboBoxInitialNodeInit()
+        {
+            comboBoxInitial.Items.Clear();
+            foreach (var node in openedGraph.getAllNodes())
+            {
+                comboBoxInitial.Items.Add(node);
+            }
+        }
 
+        private void ComboBoxTargetNodeInit()
+        {
+            comboBoxTarget.Items.Clear();
+            foreach (var node in openedGraph.getAllNodes())
+            {
+                comboBoxTarget.Items.Add(node);
+            }
+        }
 
 
         private void label2_Click(object sender, EventArgs e)
@@ -112,11 +140,6 @@ namespace Tubes2Stima_ckck
         }
 
         private void label7_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
@@ -143,7 +166,24 @@ namespace Tubes2Stima_ckck
 
         private void buttonSubmit_Click(object sender, EventArgs e)
         {
-            
+            // Tambah cek kasus apakah semua syarat sudah terpenuhi
+
+            FriendRecomendationForm childForm = new FriendRecomendationForm(this.openedGraph,this.pilihanMode,this.initialNode,this.targetNode);
+            childForm.ShowDialog();
         }
+
+        private void comboBoxInitial_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            initialNode = comboBoxInitial.SelectedItem.ToString();
+            Console.WriteLine(initialNode);
+        }
+
+        private void comboBoxTarget_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            targetNode = comboBoxTarget.SelectedItem.ToString();
+            Console.WriteLine(targetNode);
+        }
+
+        
     }
 }

@@ -20,11 +20,11 @@ namespace Tubes2Stima_ckck
 
             //Backend.TestAzhar();
             //Backend.Testadila();
-            Backend.TestDehan();
+            //Backend.TestDehan();
 
 
-            Console.WriteLine("Press Any Key To Continue..");
-            Console.ReadLine();
+            //Console.WriteLine("Press Any Key To Continue..");
+            //Console.ReadLine();
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);

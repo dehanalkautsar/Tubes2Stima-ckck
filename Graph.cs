@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Tubes2Stima_ckck
 {
-    class Graph
+    public class Graph
     {
         private bool[,] adjacentMatrix; //nentuin dimensi pake koma
         private int count_node; //ngitung node yang ada (aktif dan tidak)
