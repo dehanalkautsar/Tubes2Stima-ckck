@@ -54,6 +54,85 @@ namespace Tubes2Stima_ckck
             //return graph;
         }
 
+        private void ResetGraphVisualizer()
+        {
+            // Reset ke style awal
+
+            // Inisialisasi viewer baru
+            if (this.graphVisualizer == null)
+            {
+                Console.WriteLine("Error, graph kosong");
+            }
+            else
+            {
+                foreach (var simpul in graphVisualizer.Nodes)
+                {
+                    simpul.Attr.FillColor = Microsoft.Msagl.Drawing.Color.White;
+                }
+
+                foreach (var sisi in graphVisualizer.Edges)
+                {
+                    sisi.Attr.Color = Microsoft.Msagl.Drawing.Color.Black;
+                }
+                // Gambar Graph Visualizer
+                DrawGraphVisualizer();
+            }
+                
+        }
+
+        private void CreatePathInGraphVisualizer(string[] rute)
+        {
+            if (this.graphVisualizer == null)
+            {
+                Console.WriteLine("Error, graph kosong");
+            }
+            else
+            {
+                Node simpulLama = null;
+                // Ubah warna node
+                foreach (var node in rute)
+                {
+                    var simpul = graphVisualizer.FindNode(node);
+                    simpul.Attr.FillColor = Microsoft.Msagl.Drawing.Color.Aqua;
+                    if (simpulLama != null)
+                    {
+                        foreach (var sisiKeluar in simpulLama.Edges)
+                        {
+                            foreach (var sisiMasuk in simpul.Edges)
+                            {
+                                if (sisiKeluar == sisiMasuk) // sisi yang sama
+                                {
+                                    sisiKeluar.Attr.Color = Microsoft.Msagl.Drawing.Color.DeepPink;
+                                }
+                            }
+                        }
+                    }
+
+                    simpulLama = simpul;
+                }
+                // Gambar Graph Visualizer
+                DrawGraphVisualizer();
+                
+            }  
+        }
+
+        private void DrawGraphVisualizer()
+        {
+            // Pastikan graphVisualizer tidak null
+            if (this.graphVisualizer != null)
+            {
+                // Inisialisasi viewer baru
+                Microsoft.Msagl.GraphViewerGdi.GViewer viewer = new Microsoft.Msagl.GraphViewerGdi.GViewer();
+                viewer.Graph = graphVisualizer;
+                // Pasangkan di Panel
+                PanelGraphVisualizer.SuspendLayout();
+                viewer.Dock = System.Windows.Forms.DockStyle.Fill;
+                PanelGraphVisualizer.Controls.Clear();
+                PanelGraphVisualizer.Controls.Add(viewer);
+                PanelGraphVisualizer.ResumeLayout();
+            }
+        }
+
         private void BrowseButton_Click(object sender, EventArgs e)
         {
             OpenFileDialog openFileDialog = new OpenFileDialog
@@ -86,23 +165,10 @@ namespace Tubes2Stima_ckck
                 // Nama label fileName
                 labelFileName.Text = openFileDialog.SafeFileName;
 
-                //create a form 
-                System.Windows.Forms.Form form = new System.Windows.Forms.Form();
-                //create a viewer object 
-                Microsoft.Msagl.GraphViewerGdi.GViewer viewer = new Microsoft.Msagl.GraphViewerGdi.GViewer();
-                //create a graph object
+                // Construct GraphVisualizer
                 ConstructGraphVisualizer();
-                Microsoft.Msagl.Drawing.Graph graph = graphVisualizer;
-
-                
-                viewer.Graph = graph;
-                //associate the viewer with the form 
-                PanelGraphVisualizer.SuspendLayout();
-                viewer.Dock = System.Windows.Forms.DockStyle.Fill;
-                PanelGraphVisualizer.Controls.Clear();
-                PanelGraphVisualizer.Controls.Add(viewer);
-                PanelGraphVisualizer.ResumeLayout();
-                
+                // Gambar GraphVisualizer
+                DrawGraphVisualizer();
 
                 foreach (var node in openedGraph.getAllNodes())
                 {
@@ -184,6 +250,16 @@ namespace Tubes2Stima_ckck
             Console.WriteLine(targetNode);
         }
 
-        
+        private void testButton_Click(object sender, EventArgs e)
+        {
+            // Test rute
+            string[] rute = { "A","B","C","F","E","H" };
+            CreatePathInGraphVisualizer(rute);
+        }
+
+        private void resetButton_Click(object sender, EventArgs e)
+        {
+            ResetGraphVisualizer();
+        }
     }
 }
