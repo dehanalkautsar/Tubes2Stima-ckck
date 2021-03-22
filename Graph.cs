@@ -404,9 +404,38 @@ namespace Tubes2Stima_ckck
             }
             return new string[0];
         }
+        public static void printRute(string[] rute) //asumsi rute pasti berisi
+        {
+            int index = 0;
+            Console.Write(rute[index]);
+            while (index < rute.Length-1)
+            {
+                Console.Write(" -> " + rute[index+1]);
+                index++;
+            }
+            Console.WriteLine();
+            int nth = index - 1; //untuk keperluan nth connection
+            if (nth == 1)
+            {
+                Console.WriteLine("1st Degree");
+            }
+            else if (nth == 2)
+            {
+                Console.WriteLine("2nd Degree");
+            }
+            else if (nth == 3)
+            {
+                Console.WriteLine("3rd Degree");
+            }
+            else
+            {
+                Console.WriteLine(nth + "th Degree");
+            }
+        }
     }
 
     
+
     public class ExceptionGraphRuteDFSNotFound : Exception
     {
         public ExceptionGraphRuteDFSNotFound() : base("Graph: DFS rute not found")
