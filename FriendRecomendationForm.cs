@@ -24,7 +24,52 @@ namespace Tubes2Stima_ckck
             this.initialNode = _initialNode;
             this.targetNode = _targetNode;
             InitializeComponent();
+            titleExploreFriend();
+            pathExploreEditor();
             AddComponent();
+        }
+
+        public void titleExploreFriend()
+        {
+            string text = "Explore Friends Between " + this.initialNode + " - " + this.targetNode;
+            this.titleExplore.Text = text;
+        }
+
+        public void pathExploreEditor()
+        {
+            string text = "";
+
+            //run explore friend code
+            string[] arrayOfPath = this.openedGraph.ExploreFriend(this.initialNode, this.targetNode, this.pilihanMode);
+
+            int index = 0;
+            text = text + arrayOfPath[index];
+            while (index < arrayOfPath.Length - 1)
+            {
+                text = text + " -> " + arrayOfPath[index + 1];
+                index++;
+            }
+            text = text + "\n";
+
+            int nth = index - 1; //untuk keperluan nth connection
+            if (nth == 1)
+            {
+                text = text + "1st Degree";
+            }
+            else if (nth == 2)
+            {
+                text = text + "2nd Degree";
+            }
+            else if (nth == 3)
+            {
+                text = text + "3rd Degree";
+            }
+            else
+            {
+                text = text + nth + "th Degree";
+            }
+
+            this.pathExplore.Text = text;
         }
 
         public void AddComponent()
