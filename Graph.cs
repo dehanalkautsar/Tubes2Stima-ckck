@@ -128,7 +128,15 @@ namespace Tubes2Stima_ckck
             string[] rute = new string[0];
             bool found = this.doDFS(currNode, targetNode, ref visited, ref rute);
             if (found) {
-                return rute;
+                // Copy dulu rute yang udah diambil
+                string[] ruteFinal = new string[rute.Length + 1];
+                int i;
+                for (i = 0; i < rute.Length; i++)
+                {
+                    ruteFinal[i] = rute[i];
+                }
+                ruteFinal[i] = targetNode;
+                return ruteFinal;
             }
             else {
                 throw new ExceptionGraphRuteDFSNotFound();
@@ -190,8 +198,47 @@ namespace Tubes2Stima_ckck
                 rute[i] = " ";
             }
             bool found = this.doBFS(currNode, targetNode, ref visited, ref rute);
+
+
             if (found) {
-                return rute;
+                //buat pathnya dalam bentuk list terbalik
+                List<string> path = new List<string>();
+                path.Add(targetNode); //masukin targetNode
+                while (!path.Contains(currNode)) //looping sampe ketemu currNode di dalam list
+                {
+                    int j = 0;
+                    string nodeToBeChecked = path[path.Count - 1]; //ambil elemen terakhir
+                    int indexInRute;
+
+                    int k = 0;
+                    while (rute[k] != nodeToBeChecked)
+                    {
+                        k++;
+                    }
+                    indexInRute = k; //indexInRute adalah indeksnya elemen terakhir list
+
+                    bool ketemuDiRute = false;
+                    while (j < indexInRute && !ketemuDiRute) //looping sampe ketemu adj nya
+                    {
+                        if (foundAdj(rute[j], nodeToBeChecked))
+                        {
+                            ketemuDiRute = true;
+                            path.Add(rute[j]);
+                        }
+                        else
+                        {
+                            j++;
+                        }
+                    }
+                }
+                //putarbalik listnya
+                path.Reverse();
+                //ubah list ke array path
+                string[] arrayPath = path.ToArray();
+
+
+
+                return arrayPath;
             }
             else {
                 throw new ExceptionGraphRuteBFSNotFound();
@@ -204,9 +251,11 @@ namespace Tubes2Stima_ckck
             Queue<string> rute = new Queue<string>();
             //memasukkan initNode dalam queue
             rute.Enqueue(initNode);
+            visited[this.foundIndex(initNode)] = true;
             
             int idxrute; //index array finalrute
             bool Bfound; //udah goal ke targetNode atau belom
+
 
             idxrute = 0;
             Bfound = false;
@@ -252,22 +301,28 @@ namespace Tubes2Stima_ckck
                 try
                 {
                     string[] rute = initGraph.BFS(username1, username2);
-                    int count = 0;
+                    
+                    //int count = 0;
 
-                    while (rute[count] != " ") {
-                        count++;
-                    }
+                    //for (int i = 0; i < rute.Length; i++)
+                    //{
+                    //    Console.WriteLine(rute[i]);
+                    //}
 
-                    string[] finalrute = new string[count];
+                    //while (rute[count] != " ") {
+                    //    count++;
+                    //}
+                    ////Console.WriteLine("check");
+                    //string[] finalrute = new string[count];
 
-                    for (int i = 0; i < count; i++) {
-                        finalrute[i] = rute[i];
-                    }
-                    // foreach (var item in rute)
-                    // {
-                    //     Console.WriteLine(item);
-                    // }
-                    return finalrute;
+                    //for (int i = 0; i < count; i++) {
+                    //    finalrute[i] = rute[i];
+                    //}
+                    //// foreach (var item in rute)
+                    //// {
+                    ////     Console.WriteLine(item);
+                    //// }
+                    return rute;
                 }
                 catch (Exception e)
                 {

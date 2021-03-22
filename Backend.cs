@@ -54,7 +54,26 @@ namespace Tubes2Stima_ckck
         //    {
         //        Console.WriteLine("Not Found");
         //    }
-        //}        
+        //}
+        
+        public static void TestDehan()
+        {
+            Graph initGraph = ReadFile.inputGraphFile("test.txt");
+            string pilihan;
+            pilihan = Console.ReadLine();
+            try
+            {
+                string[] rute = initGraph.ExploreFriend("A", "H", pilihan);
+                foreach (var item in rute)
+                {
+                    Console.WriteLine(item);
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+        }
         
     }
 
