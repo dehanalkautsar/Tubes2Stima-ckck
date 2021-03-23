@@ -16,13 +16,15 @@ namespace Tubes2Stima_ckck
     {
         private Graph openedGraph;
         private Microsoft.Msagl.Drawing.Graph graphVisualizer;
-        private string pilihanMode = "None";
+        private string pilihanMode = "";
         private string initialNode = "";
         private string targetNode = "";
 
         public MainForm()
         {
             InitializeComponent();
+            this.radioButtonBFS.Checked = true;
+            pilihanMode = "BFS";
         }
 
         private void ConstructGraphVisualizer()
@@ -80,8 +82,9 @@ namespace Tubes2Stima_ckck
                 
         }
 
-        private void CreatePathInGraphVisualizer(string[] rute)
+        private void DrawPathInGraphVisualizer(string[] rute)
         {
+            ResetGraphVisualizer();
             if (this.graphVisualizer == null)
             {
                 Console.WriteLine("Error, graph kosong");
@@ -241,21 +244,34 @@ namespace Tubes2Stima_ckck
         private void comboBoxInitial_SelectedIndexChanged(object sender, EventArgs e)
         {
             initialNode = comboBoxInitial.SelectedItem.ToString();
-            Console.WriteLine(initialNode);
+            if (initialNode != "" && targetNode != "" && initialNode != targetNode)
+            {
+                var rute = openedGraph.ExploreFriend(initialNode, targetNode, pilihanMode);
+                if (rute.Length != 0)
+                {
+                    DrawPathInGraphVisualizer(rute);
+                    return;
+                }
+            }
+            ResetGraphVisualizer();
+            //Console.WriteLine(initialNode);
         }
 
         private void comboBoxTarget_SelectedIndexChanged(object sender, EventArgs e)
         {
             targetNode = comboBoxTarget.SelectedItem.ToString();
-            Console.WriteLine(targetNode);
-        }
-
-        private void testButton_Click(object sender, EventArgs e)
-        {
-            // Test rute
-            string[] rute = { "A","B","C","F","E","H" };
-            CreatePathInGraphVisualizer(rute);
-        }
+            if (initialNode != "" && targetNode != "" && initialNode != targetNode)
+            {
+                var rute = openedGraph.ExploreFriend(initialNode, targetNode, pilihanMode);
+                if (rute.Length != 0)
+                {
+                    DrawPathInGraphVisualizer(rute);
+                    return;
+                }
+            }
+            ResetGraphVisualizer();
+            //Console.WriteLine(targetNode);
+        }      
 
         private void resetButton_Click(object sender, EventArgs e)
         {
