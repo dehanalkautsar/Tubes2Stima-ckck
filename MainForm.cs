@@ -157,7 +157,7 @@ namespace Tubes2Stima_ckck
 
             if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
-
+                this.labelHelp.Hide();
                 // Baca Graph dari file yang dipilih
                 string path = openFileDialog.FileName;
                 string[] filelines = File.ReadAllLines(path);
@@ -202,43 +202,67 @@ namespace Tubes2Stima_ckck
             }
         }
 
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label7_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void radioButtonBFS_CheckedChanged(object sender, EventArgs e)
         {
             pilihanMode = "BFS";
+            if (initialNode != "" && targetNode != "" && initialNode != targetNode)
+            {
+                var rute = openedGraph.ExploreFriend(initialNode, targetNode, pilihanMode);
+                if (rute.Length != 0)
+                {
+                    DrawPathInGraphVisualizer(rute);
+                }
+            }
         }
 
         private void radioButtonDFS_CheckedChanged(object sender, EventArgs e)
         {
             pilihanMode = "DFS";
+            if (initialNode != "" && targetNode != "" && initialNode != targetNode)
+            {
+                var rute = openedGraph.ExploreFriend(initialNode, targetNode, pilihanMode);
+                if (rute.Length != 0)
+                {
+                    DrawPathInGraphVisualizer(rute);
+                }
+            }
         }
 
         private void buttonSubmit_Click(object sender, EventArgs e)
         {
             // Tambah cek kasus apakah semua syarat sudah terpenuhi
+            if (openedGraph != null && initialNode != "" && targetNode != "" && initialNode != targetNode)
+            {
+                FriendRecomendationForm childForm = new FriendRecomendationForm(this.openedGraph, this.pilihanMode, this.initialNode, this.targetNode);
+                childForm.ShowDialog();
+            }
+            else
+            {
+                string title = "Perhatian";
+                string message = "";
+                if (openedGraph == null)
+                {
+                    message = "Pilih terlebih dahulu file graph yang ingin digunakan";
+                }
+                else if (initialNode == "")
+                {
+                    message = "Silahkan lengkapi form Choose Account";
+                }
+                else if (targetNode == "")
+                {
+                    message = "Silahkan lengkapi form Explore friends with";
+                }
+                else if (initialNode == targetNode)
+                {
+                    message = "Jones temanan sama diri sendiri";
+                }
+                
+                
+                MessageBox.Show(message, title);
+            }
 
-            FriendRecomendationForm childForm = new FriendRecomendationForm(this.openedGraph,this.pilihanMode,this.initialNode,this.targetNode);
-            childForm.ShowDialog();
+
+            
         }
 
         private void comboBoxInitial_SelectedIndexChanged(object sender, EventArgs e)
@@ -273,9 +297,5 @@ namespace Tubes2Stima_ckck
             //Console.WriteLine(targetNode);
         }      
 
-        private void resetButton_Click(object sender, EventArgs e)
-        {
-            ResetGraphVisualizer();
-        }
     }
 }

@@ -10,7 +10,7 @@ namespace Tubes2Stima_ckck
     {
         private bool[,] adjacentMatrix; //nentuin dimensi pake koma
         private int count_node; //ngitung node yang ada (aktif dan tidak)
-        private Dictionary<string, int> node_dictionary; //nama orang, indeks di adjacent matriks
+        private SortedDictionary<string, int> node_dictionary; //nama orang, indeks di adjacent matriks
 
         //Constructor
 
@@ -19,7 +19,7 @@ namespace Tubes2Stima_ckck
         {
             this.count_node = 0;
             this.adjacentMatrix = new bool[0, 0];
-            this.node_dictionary = new Dictionary<string, int>();
+            this.node_dictionary = new SortedDictionary<string, int>();
         }
 
         // Dengan adjacent Matrix
@@ -27,7 +27,7 @@ namespace Tubes2Stima_ckck
         {
             this.count_node = countNode;
             this.adjacentMatrix = new bool[count_node, count_node]; //bikin adjacent matriks persegi
-            this.node_dictionary = new Dictionary<string, int>();
+            this.node_dictionary = new SortedDictionary<string, int>();
         }
 
         public void initAdjacentMatrix(int countNode)

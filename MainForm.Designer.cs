@@ -37,6 +37,7 @@ namespace Tubes2Stima_ckck
             this.BrowseButton = new System.Windows.Forms.Button();
             this.labelFileName = new System.Windows.Forms.Label();
             this.PanelGraphVisualizer = new System.Windows.Forms.Panel();
+            this.labelHelp = new System.Windows.Forms.Label();
             this.radioButtonBFS = new System.Windows.Forms.RadioButton();
             this.radioButtonDFS = new System.Windows.Forms.RadioButton();
             this.label7 = new System.Windows.Forms.Label();
@@ -46,7 +47,7 @@ namespace Tubes2Stima_ckck
             this.comboBoxInitial = new System.Windows.Forms.ComboBox();
             this.comboBoxTarget = new System.Windows.Forms.ComboBox();
             this.buttonSubmit = new System.Windows.Forms.Button();
-            this.resetButton = new System.Windows.Forms.Button();
+            this.PanelGraphVisualizer.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -69,7 +70,6 @@ namespace Tubes2Stima_ckck
             this.label2.Size = new System.Drawing.Size(157, 23);
             this.label2.TabIndex = 1;
             this.label2.Text = "Graph File";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label3
             // 
@@ -124,10 +124,23 @@ namespace Tubes2Stima_ckck
             // 
             this.PanelGraphVisualizer.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.PanelGraphVisualizer.Controls.Add(this.labelHelp);
             this.PanelGraphVisualizer.Location = new System.Drawing.Point(12, 170);
             this.PanelGraphVisualizer.Name = "PanelGraphVisualizer";
-            this.PanelGraphVisualizer.Size = new System.Drawing.Size(508, 276);
+            this.PanelGraphVisualizer.Size = new System.Drawing.Size(508, 484);
             this.PanelGraphVisualizer.TabIndex = 9;
+            // 
+            // labelHelp
+            // 
+            this.labelHelp.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelHelp.Font = new System.Drawing.Font("Comic Sans MS", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelHelp.Location = new System.Drawing.Point(3, 196);
+            this.labelHelp.Name = "labelHelp";
+            this.labelHelp.Size = new System.Drawing.Size(502, 44);
+            this.labelHelp.TabIndex = 0;
+            this.labelHelp.Text = "<Help!>";
+            this.labelHelp.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // radioButtonBFS
             // 
@@ -158,17 +171,16 @@ namespace Tubes2Stima_ckck
             // label7
             // 
             this.label7.Font = new System.Drawing.Font("Comic Sans MS", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(14, 466);
+            this.label7.Location = new System.Drawing.Point(14, 669);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(157, 23);
             this.label7.TabIndex = 12;
             this.label7.Text = "Choose Account";
-            this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // label8
             // 
             this.label8.Font = new System.Drawing.Font("Comic Sans MS", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(14, 500);
+            this.label8.Location = new System.Drawing.Point(14, 703);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(194, 23);
             this.label8.TabIndex = 13;
@@ -178,7 +190,7 @@ namespace Tubes2Stima_ckck
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Comic Sans MS", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(193, 466);
+            this.label9.Location = new System.Drawing.Point(193, 669);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(15, 24);
             this.label9.TabIndex = 14;
@@ -188,7 +200,7 @@ namespace Tubes2Stima_ckck
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Comic Sans MS", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(193, 500);
+            this.label10.Location = new System.Drawing.Point(193, 703);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(15, 24);
             this.label10.TabIndex = 15;
@@ -199,7 +211,7 @@ namespace Tubes2Stima_ckck
             this.comboBoxInitial.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.comboBoxInitial.FormattingEnabled = true;
-            this.comboBoxInitial.Location = new System.Drawing.Point(214, 469);
+            this.comboBoxInitial.Location = new System.Drawing.Point(214, 672);
             this.comboBoxInitial.MaximumSize = new System.Drawing.Size(500, 0);
             this.comboBoxInitial.Name = "comboBoxInitial";
             this.comboBoxInitial.Size = new System.Drawing.Size(176, 24);
@@ -211,7 +223,7 @@ namespace Tubes2Stima_ckck
             this.comboBoxTarget.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.comboBoxTarget.FormattingEnabled = true;
-            this.comboBoxTarget.Location = new System.Drawing.Point(214, 503);
+            this.comboBoxTarget.Location = new System.Drawing.Point(214, 706);
             this.comboBoxTarget.MaximumSize = new System.Drawing.Size(500, 0);
             this.comboBoxTarget.Name = "comboBoxTarget";
             this.comboBoxTarget.Size = new System.Drawing.Size(176, 24);
@@ -221,7 +233,7 @@ namespace Tubes2Stima_ckck
             // buttonSubmit
             // 
             this.buttonSubmit.Font = new System.Drawing.Font("Comic Sans MS", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonSubmit.Location = new System.Drawing.Point(18, 538);
+            this.buttonSubmit.Location = new System.Drawing.Point(18, 741);
             this.buttonSubmit.Name = "buttonSubmit";
             this.buttonSubmit.Size = new System.Drawing.Size(112, 30);
             this.buttonSubmit.TabIndex = 19;
@@ -229,20 +241,10 @@ namespace Tubes2Stima_ckck
             this.buttonSubmit.UseVisualStyleBackColor = true;
             this.buttonSubmit.Click += new System.EventHandler(this.buttonSubmit_Click);
             // 
-            // resetButton
-            // 
-            this.resetButton.Location = new System.Drawing.Point(445, 121);
-            this.resetButton.Name = "resetButton";
-            this.resetButton.Size = new System.Drawing.Size(75, 23);
-            this.resetButton.TabIndex = 21;
-            this.resetButton.Text = "reset";
-            this.resetButton.UseVisualStyleBackColor = true;
-            this.resetButton.Click += new System.EventHandler(this.resetButton_Click);
-            // 
             // MainForm
             // 
-            this.ClientSize = new System.Drawing.Size(532, 583);
-            this.Controls.Add(this.resetButton);
+            this.AutoScroll = true;
+            this.ClientSize = new System.Drawing.Size(532, 789);
             this.Controls.Add(this.buttonSubmit);
             this.Controls.Add(this.comboBoxTarget);
             this.Controls.Add(this.comboBoxInitial);
@@ -263,7 +265,7 @@ namespace Tubes2Stima_ckck
             this.MinimumSize = new System.Drawing.Size(550, 630);
             this.Name = "MainForm";
             this.Text = "Tubes Brow";
-            this.Load += new System.EventHandler(this.Form1_Load);
+            this.PanelGraphVisualizer.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -290,7 +292,7 @@ namespace Tubes2Stima_ckck
         private System.Windows.Forms.ComboBox comboBoxInitial;
         private System.Windows.Forms.ComboBox comboBoxTarget;
         private System.Windows.Forms.Button buttonSubmit;
-        private System.Windows.Forms.Button resetButton;
+        private System.Windows.Forms.Label labelHelp;
     }
 }
 
