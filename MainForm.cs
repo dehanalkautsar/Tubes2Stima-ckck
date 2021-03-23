@@ -96,7 +96,7 @@ namespace Tubes2Stima_ckck
                 foreach (var node in rute)
                 {
                     var simpul = graphVisualizer.FindNode(node);
-                    simpul.Attr.FillColor = Microsoft.Msagl.Drawing.Color.Aqua;
+                    simpul.Attr.FillColor = Microsoft.Msagl.Drawing.Color.Goldenrod;
                     if (simpulLama != null)
                     {
                         foreach (var sisiKeluar in simpulLama.Edges)
@@ -105,7 +105,7 @@ namespace Tubes2Stima_ckck
                             {
                                 if (sisiKeluar == sisiMasuk) // sisi yang sama
                                 {
-                                    sisiKeluar.Attr.Color = Microsoft.Msagl.Drawing.Color.DeepPink;
+                                    sisiKeluar.Attr.Color = Microsoft.Msagl.Drawing.Color.DarkGoldenrod;
                                 }
                             }
                         }

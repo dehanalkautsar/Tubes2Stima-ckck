@@ -36,7 +36,7 @@ namespace Tubes2Stima_ckck
             // 
             // labelFriendRecomendation
             // 
-            this.labelFriendRecomendation.Font = new System.Drawing.Font("Comic Sans MS", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelFriendRecomendation.Font = new System.Drawing.Font("Poppins Black", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelFriendRecomendation.Location = new System.Drawing.Point(8, 86);
             this.labelFriendRecomendation.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelFriendRecomendation.Name = "labelFriendRecomendation";
@@ -46,7 +46,7 @@ namespace Tubes2Stima_ckck
             // 
             // titleExplore
             // 
-            this.titleExplore.Font = new System.Drawing.Font("Comic Sans MS", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.titleExplore.Font = new System.Drawing.Font("Poppins Black", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.titleExplore.Location = new System.Drawing.Point(9, 7);
             this.titleExplore.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.titleExplore.Name = "titleExplore";
@@ -56,7 +56,7 @@ namespace Tubes2Stima_ckck
             // 
             // pathExplore
             // 
-            this.pathExplore.Font = new System.Drawing.Font("Comic Sans MS", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pathExplore.Font = new System.Drawing.Font("Metropolis Light", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pathExplore.Location = new System.Drawing.Point(9, 34);
             this.pathExplore.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.pathExplore.Name = "pathExplore";
