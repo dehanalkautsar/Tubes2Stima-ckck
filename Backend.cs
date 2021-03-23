@@ -60,7 +60,9 @@ namespace Tubes2Stima_ckck
         {
             Graph initGraph = ReadFile.inputGraphFile("test.txt");
             //initGraph.mutualFriend("A", "F", initGraph).ForEach(i => Console.Write("{0}\t", i));
-            initGraph.allMutual("A");
+            Dictionary<string, List<string>> mutualT = new Dictionary<string, List<string>>();
+            mutualT = initGraph.allMutual("A");
+            initGraph.displayFriendR(mutualT);
         }
         
         public static void TestDehan()
@@ -72,6 +74,10 @@ namespace Tubes2Stima_ckck
             try
             {
                 string[] rute = initGraph.ExploreFriend("A", "H", pilihan);
+                foreach (var item in rute)
+                {
+                    Console.WriteLine(item);
+                }
                 Graph.printRute(rute);
             }
             catch (Exception e)
