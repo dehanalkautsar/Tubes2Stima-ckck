@@ -89,7 +89,7 @@ namespace Tubes2Stima_ckck
                 // Label nodeLabel 
                 Label nodeLabel = new Label();
                 // Edit properties nodeLabel
-                nodeLabel.Font = new System.Drawing.Font("Comic Sans MS", 7.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                nodeLabel.Font = new System.Drawing.Font("Metropolis", 7.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
                 nodeLabel.Location = new System.Drawing.Point(15, 110 + i * 55 + offset);
                 nodeLabel.Name = "labelNode" + i.ToString();
                 nodeLabel.Size = new System.Drawing.Size(262, 15);
@@ -102,7 +102,7 @@ namespace Tubes2Stima_ckck
                 int countMutual = friend.Value.Count();
                 // Edit properties listMutualFriend
                 listMutualFriend.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right)));
-                listMutualFriend.Font = new System.Drawing.Font("Comic Sans MS", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                listMutualFriend.Font = new System.Drawing.Font("Metropolis", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
                 listMutualFriend.Location = new System.Drawing.Point(20, 128 + i * 55 + offset);
                 listMutualFriend.Name = "labelListMutualFriend" + i.ToString();
                 listMutualFriend.Size = new System.Drawing.Size(487, 15 + countMutual * 15);
