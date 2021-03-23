@@ -139,7 +139,8 @@ namespace Tubes2Stima_ckck
                 return ruteFinal;
             }
             else {
-                throw new ExceptionGraphRuteDFSNotFound();
+                //throw new ExceptionGraphRuteDFSNotFound();
+                return new string[0];
             }
             
         }
@@ -241,7 +242,8 @@ namespace Tubes2Stima_ckck
                 return arrayPath;
             }
             else {
-                throw new ExceptionGraphRuteBFSNotFound();
+                //throw new ExceptionGraphRuteBFSNotFound();
+                return new string[0];
             }
             
         }

@@ -41,32 +41,39 @@ namespace Tubes2Stima_ckck
 
             //run explore friend code
             string[] arrayOfPath = this.openedGraph.ExploreFriend(this.initialNode, this.targetNode, this.pilihanMode);
+            if (arrayOfPath.Length > 0)
+            {
+                int index = 0;
+                text = text + arrayOfPath[index];
+                while (index < arrayOfPath.Length - 1)
+                {
+                    text = text + " -> " + arrayOfPath[index + 1];
+                    index++;
+                }
+                text = text + "\n";
 
-            int index = 0;
-            text = text + arrayOfPath[index];
-            while (index < arrayOfPath.Length - 1)
-            {
-                text = text + " -> " + arrayOfPath[index + 1];
-                index++;
+                int nth = index - 1; //untuk keperluan nth connection
+                if (nth == 1)
+                {
+                    text = text + "1st Degree";
+                }
+                else if (nth == 2)
+                {
+                    text = text + "2nd Degree";
+                }
+                else if (nth == 3)
+                {
+                    text = text + "3rd Degree";
+                }
+                else
+                {
+                    text = text + nth + "th Degree";
+                }
             }
-            text = text + "\n";
 
-            int nth = index - 1; //untuk keperluan nth connection
-            if (nth == 1)
-            {
-                text = text + "1st Degree";
-            }
-            else if (nth == 2)
-            {
-                text = text + "2nd Degree";
-            }
-            else if (nth == 3)
-            {
-                text = text + "3rd Degree";
-            }
             else
             {
-                text = text + nth + "th Degree";
+                text = text + "Tidak ada jalur koneksi yang tersedia \nAnda harus memulai koneksi baru itu sendiri\n";
             }
 
             this.pathExplore.Text = text;
