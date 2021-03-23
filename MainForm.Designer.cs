@@ -46,7 +46,6 @@ namespace Tubes2Stima_ckck
             this.comboBoxInitial = new System.Windows.Forms.ComboBox();
             this.comboBoxTarget = new System.Windows.Forms.ComboBox();
             this.buttonSubmit = new System.Windows.Forms.Button();
-            this.testButton = new System.Windows.Forms.Button();
             this.resetButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -230,19 +229,9 @@ namespace Tubes2Stima_ckck
             this.buttonSubmit.UseVisualStyleBackColor = true;
             this.buttonSubmit.Click += new System.EventHandler(this.buttonSubmit_Click);
             // 
-            // testButton
-            // 
-            this.testButton.Location = new System.Drawing.Point(423, 92);
-            this.testButton.Name = "testButton";
-            this.testButton.Size = new System.Drawing.Size(75, 23);
-            this.testButton.TabIndex = 20;
-            this.testButton.Text = "test";
-            this.testButton.UseVisualStyleBackColor = true;
-            this.testButton.Click += new System.EventHandler(this.testButton_Click);
-            // 
             // resetButton
             // 
-            this.resetButton.Location = new System.Drawing.Point(423, 122);
+            this.resetButton.Location = new System.Drawing.Point(445, 121);
             this.resetButton.Name = "resetButton";
             this.resetButton.Size = new System.Drawing.Size(75, 23);
             this.resetButton.TabIndex = 21;
@@ -254,7 +243,6 @@ namespace Tubes2Stima_ckck
             // 
             this.ClientSize = new System.Drawing.Size(532, 583);
             this.Controls.Add(this.resetButton);
-            this.Controls.Add(this.testButton);
             this.Controls.Add(this.buttonSubmit);
             this.Controls.Add(this.comboBoxTarget);
             this.Controls.Add(this.comboBoxInitial);
@@ -302,7 +290,6 @@ namespace Tubes2Stima_ckck
         private System.Windows.Forms.ComboBox comboBoxInitial;
         private System.Windows.Forms.ComboBox comboBoxTarget;
         private System.Windows.Forms.Button buttonSubmit;
-        private System.Windows.Forms.Button testButton;
         private System.Windows.Forms.Button resetButton;
     }
 }
