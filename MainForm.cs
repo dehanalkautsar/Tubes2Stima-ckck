@@ -180,7 +180,8 @@ namespace Tubes2Stima_ckck
 
                 ComboBoxInitialNodeInit();
                 ComboBoxTargetNodeInit();
-
+                this.initialNode = "";
+                this.targetNode = "";
             }
         }
 
