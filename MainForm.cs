@@ -96,7 +96,7 @@ namespace Tubes2Stima_ckck
                 foreach (var node in rute)
                 {
                     var simpul = graphVisualizer.FindNode(node);
-                    simpul.Attr.FillColor = Microsoft.Msagl.Drawing.Color.Goldenrod;
+                    simpul.Attr.FillColor = Microsoft.Msagl.Drawing.Color.LightSteelBlue;
                     if (simpulLama != null)
                     {
                         foreach (var sisiKeluar in simpulLama.Edges)
@@ -295,7 +295,11 @@ namespace Tubes2Stima_ckck
             }
             ResetGraphVisualizer();
             //Console.WriteLine(targetNode);
-        }      
+        }
 
+        private void label7_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

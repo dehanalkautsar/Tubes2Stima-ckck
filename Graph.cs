@@ -318,6 +318,7 @@ namespace Tubes2Stima_ckck
 
         public Dictionary<string, List<string>> allMutual(string username1)
         {
+            //membuat list of friend (1st level)
             List<string> friend = new List<string>();
             foreach(var node in this.node_dictionary)
             {
@@ -326,35 +327,21 @@ namespace Tubes2Stima_ckck
                     friend.Add(node.Key);
                 }
             }
+            //
             Dictionary<string, List<string>> mutual = new Dictionary<string, List<string>>();
             foreach(var node in this.node_dictionary)
             {
-                List<string> mutualT = new List<string>();
+                List<string> mutualT = new List<string>(); //list dari mutual friend yang dimiliki oleh username1 dan setiap node.Key
                 mutualT = this.mutualFriend(username1, node.Key, this);
 
                 if(mutualT.Count != 0 && node.Key != username1 && !friend.Contains(node.Key))
                 {
-                    mutual[node.Key] = mutualT;
+                    mutual[node.Key] = mutualT; //dict of friend (2nd level)
                 }
                 
             } return mutual;
 
         }
-
-        public void displayFriendR (Dictionary<string, List<string>> mutual)
-        {
-
-            Console.WriteLine("Sorted by Value");  
-            Console.WriteLine("=============");  
-            foreach (KeyValuePair<string, List<string>> author in mutual.OrderByDescending(key => key.Value.Count()))  
-            {  
-                Console.WriteLine("Key: {0}, Value: {1}", author.Key, author.Value.Count());
-                
-            }
-  
-        }
-
-        //public bool isMutual
 
         public string[] ExploreFriend(string username1, string username2, string pilihan) {
      

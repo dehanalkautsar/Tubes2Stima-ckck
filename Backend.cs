@@ -62,7 +62,7 @@ namespace Tubes2Stima_ckck
             //initGraph.mutualFriend("A", "F", initGraph).ForEach(i => Console.Write("{0}\t", i));
             Dictionary<string, List<string>> mutualT = new Dictionary<string, List<string>>();
             mutualT = initGraph.allMutual("A");
-            initGraph.displayFriendR(mutualT);
+            //initGraph.displayFriendR(mutualT);
         }
         
         public static void TestDehan()

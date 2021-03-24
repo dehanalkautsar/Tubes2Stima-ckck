@@ -88,7 +88,7 @@ namespace Tubes2Stima_ckck
             Dictionary<string, List<string>> dict = openedGraph.allMutual(initialNode);
             //Dictionary<string, List<string>> allMutual(string username1)
             int offset = 0;
-            // Ganti loop ini jadi apa yang mau dibuat
+
             foreach (KeyValuePair<string, List<string>> friend in dict.OrderByDescending(key => key.Value.Count()))
             {
                 
@@ -96,8 +96,8 @@ namespace Tubes2Stima_ckck
                 // Label nodeLabel 
                 Label nodeLabel = new Label();
                 // Edit properties nodeLabel
-                nodeLabel.Font = new System.Drawing.Font("Metropolis", 7.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-                nodeLabel.Location = new System.Drawing.Point(15, 110 + i * 55 + offset);
+                nodeLabel.Font = new System.Drawing.Font("Metropolis", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                nodeLabel.Location = new System.Drawing.Point(41, 115 + i * 55 + offset);
                 nodeLabel.Name = "labelNode" + i.ToString();
                 nodeLabel.Size = new System.Drawing.Size(487, 15);
                 nodeLabel.Text = "Nama akun: " + friend.Key.ToString();
@@ -109,8 +109,8 @@ namespace Tubes2Stima_ckck
                 int countMutual = friend.Value.Count();
                 // Edit properties listMutualFriend
                 listMutualFriend.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right)));
-                listMutualFriend.Font = new System.Drawing.Font("Metropolis", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-                listMutualFriend.Location = new System.Drawing.Point(17, 128 + i * 55 + offset);
+                listMutualFriend.Font = new System.Drawing.Font("Metropolis", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                listMutualFriend.Location = new System.Drawing.Point(50, 135 + i * 55 + offset);
                 listMutualFriend.Name = "labelListMutualFriend" + i.ToString();
                 listMutualFriend.Size = new System.Drawing.Size(487, 15 + countMutual * 15);
                 listMutualFriend.Text = friend.Value.Count().ToString() + " Mutual Friend:\n";
@@ -118,7 +118,7 @@ namespace Tubes2Stima_ckck
                 foreach(var item in friend.Value)
                 {
                     listMutualFriend.Text = listMutualFriend.Text + "   "+ item.ToString() + "\n";
-                    offset += 10;
+                    offset += 15;
                 }
                 
 
