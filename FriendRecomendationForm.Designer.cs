@@ -62,7 +62,7 @@ namespace Tubes2Stima_ckck
             // 
             this.pathExplore.BackColor = System.Drawing.Color.Transparent;
             this.pathExplore.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.pathExplore.Location = new System.Drawing.Point(32, 42);
+            this.pathExplore.Location = new System.Drawing.Point(43, 42);
             this.pathExplore.Name = "pathExplore";
             this.pathExplore.Size = new System.Drawing.Size(457, 47);
             this.pathExplore.TabIndex = 21;
