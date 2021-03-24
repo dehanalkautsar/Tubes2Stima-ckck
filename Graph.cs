@@ -13,7 +13,6 @@ namespace Tubes2Stima_ckck
         private SortedDictionary<string, int> node_dictionary; //nama orang, indeks di adjacent matriks
 
         //Constructor
-
         // Tanpa adjacent Matrix
         public Graph()
         {
@@ -280,6 +279,7 @@ namespace Tubes2Stima_ckck
             }
             return Bfound;
         }
+        
         public List<string> mutualFriend(string username1, string username2, Graph initGraph)
         {
             List<string> friend1 = new List<string>();
@@ -376,6 +376,7 @@ namespace Tubes2Stima_ckck
             }
             return new string[0];
         }
+        
         public static void printRute(string[] rute) //asumsi rute pasti berisi
         {
             int index = 0;
