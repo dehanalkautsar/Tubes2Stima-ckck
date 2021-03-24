@@ -96,10 +96,10 @@ namespace Tubes2Stima_ckck
                 // Label nodeLabel 
                 Label nodeLabel = new Label();
                 // Edit properties nodeLabel
-                nodeLabel.Font = new System.Drawing.Font("Metropolis", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-                nodeLabel.Location = new System.Drawing.Point(41, 115 + i * 55 + offset);
+                nodeLabel.Font = new System.Drawing.Font("Metropolis", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                nodeLabel.Location = new System.Drawing.Point(30, 110 + i * 55 + offset);
                 nodeLabel.Name = "labelNode" + i.ToString();
-                nodeLabel.Size = new System.Drawing.Size(487, 15);
+                nodeLabel.Size = new System.Drawing.Size(320, 20);
                 nodeLabel.Text = "Nama akun: " + friend.Key.ToString();
                 // Tambah ke form
                 this.Controls.Add(nodeLabel);
@@ -110,14 +110,14 @@ namespace Tubes2Stima_ckck
                 // Edit properties listMutualFriend
                 listMutualFriend.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right)));
                 listMutualFriend.Font = new System.Drawing.Font("Metropolis", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-                listMutualFriend.Location = new System.Drawing.Point(50, 135 + i * 55 + offset);
+                listMutualFriend.Location = new System.Drawing.Point(35, 130 + i * 55 + offset);
                 listMutualFriend.Name = "labelListMutualFriend" + i.ToString();
-                listMutualFriend.Size = new System.Drawing.Size(487, 15 + countMutual * 15);
+                listMutualFriend.Size = new System.Drawing.Size(320, 20 + countMutual * 20);
                 listMutualFriend.Text = friend.Value.Count().ToString() + " Mutual Friend:\n";
                 
                 foreach(var item in friend.Value)
                 {
-                    listMutualFriend.Text = listMutualFriend.Text + "   "+ item.ToString() + "\n";
+                    listMutualFriend.Text = listMutualFriend.Text + "    "+ item.ToString() + "\n";
                     offset += 15;
                 }
                 
