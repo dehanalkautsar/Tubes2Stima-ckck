@@ -54,18 +54,18 @@ namespace Tubes2Stima_ckck
             // 
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.label1.Font = new System.Drawing.Font("Poppins Black", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.SteelBlue;
             this.label1.Location = new System.Drawing.Point(94, 26);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(353, 52);
+            this.label1.Size = new System.Drawing.Size(351, 52);
             this.label1.TabIndex = 0;
             this.label1.Text = "D e h a n    M e n c a r i    T e m a n";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label2
             // 
-            this.label2.Font = new System.Drawing.Font("Metropolis", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(19, 94);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(157, 23);
@@ -74,7 +74,7 @@ namespace Tubes2Stima_ckck
             // 
             // label3
             // 
-            this.label3.Font = new System.Drawing.Font("Metropolis", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(18, 128);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(157, 23);
@@ -87,7 +87,7 @@ namespace Tubes2Stima_ckck
             this.label4.Font = new System.Drawing.Font("Comic Sans MS", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(156, 88);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(13, 19);
+            this.label4.Size = new System.Drawing.Size(15, 24);
             this.label4.TabIndex = 3;
             this.label4.Text = ":";
             // 
@@ -97,7 +97,7 @@ namespace Tubes2Stima_ckck
             this.label5.Font = new System.Drawing.Font("Comic Sans MS", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(156, 125);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(13, 19);
+            this.label5.Size = new System.Drawing.Size(15, 24);
             this.label5.TabIndex = 4;
             this.label5.Text = ":";
             // 
@@ -105,7 +105,7 @@ namespace Tubes2Stima_ckck
             // 
             this.BrowseButton.BackColor = System.Drawing.Color.Cornsilk;
             this.BrowseButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.BrowseButton.Font = new System.Drawing.Font("Poppins Black", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BrowseButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BrowseButton.Location = new System.Drawing.Point(177, 85);
             this.BrowseButton.Name = "BrowseButton";
             this.BrowseButton.Size = new System.Drawing.Size(112, 30);
@@ -120,7 +120,7 @@ namespace Tubes2Stima_ckck
             this.labelFileName.Font = new System.Drawing.Font("Comic Sans MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelFileName.Location = new System.Drawing.Point(295, 92);
             this.labelFileName.Name = "labelFileName";
-            this.labelFileName.Size = new System.Drawing.Size(0, 17);
+            this.labelFileName.Size = new System.Drawing.Size(0, 20);
             this.labelFileName.TabIndex = 6;
             // 
             // PanelGraphVisualizer
@@ -130,7 +130,7 @@ namespace Tubes2Stima_ckck
             this.PanelGraphVisualizer.BackColor = System.Drawing.Color.Beige;
             this.PanelGraphVisualizer.Location = new System.Drawing.Point(14, 170);
             this.PanelGraphVisualizer.Name = "PanelGraphVisualizer";
-            this.PanelGraphVisualizer.Size = new System.Drawing.Size(508, 371);
+            this.PanelGraphVisualizer.Size = new System.Drawing.Size(506, 371);
             this.PanelGraphVisualizer.TabIndex = 9;
             // 
             // labelHelp
@@ -148,11 +148,11 @@ namespace Tubes2Stima_ckck
             // radioButtonBFS
             // 
             this.radioButtonBFS.AutoSize = true;
-            this.radioButtonBFS.Font = new System.Drawing.Font("Metropolis Black", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioButtonBFS.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radioButtonBFS.ForeColor = System.Drawing.Color.SteelBlue;
             this.radioButtonBFS.Location = new System.Drawing.Point(179, 128);
             this.radioButtonBFS.Name = "radioButtonBFS";
-            this.radioButtonBFS.Size = new System.Drawing.Size(45, 15);
+            this.radioButtonBFS.Size = new System.Drawing.Size(58, 21);
             this.radioButtonBFS.TabIndex = 10;
             this.radioButtonBFS.TabStop = true;
             this.radioButtonBFS.Text = "BFS";
@@ -163,11 +163,11 @@ namespace Tubes2Stima_ckck
             // 
             this.radioButtonDFS.AutoSize = true;
             this.radioButtonDFS.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.radioButtonDFS.Font = new System.Drawing.Font("Metropolis Black", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioButtonDFS.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radioButtonDFS.ForeColor = System.Drawing.Color.SteelBlue;
             this.radioButtonDFS.Location = new System.Drawing.Point(245, 127);
             this.radioButtonDFS.Name = "radioButtonDFS";
-            this.radioButtonDFS.Size = new System.Drawing.Size(45, 15);
+            this.radioButtonDFS.Size = new System.Drawing.Size(59, 21);
             this.radioButtonDFS.TabIndex = 11;
             this.radioButtonDFS.TabStop = true;
             this.radioButtonDFS.Text = "DFS";
@@ -177,7 +177,7 @@ namespace Tubes2Stima_ckck
             // label7
             // 
             this.label7.BackColor = System.Drawing.Color.Transparent;
-            this.label7.Font = new System.Drawing.Font("Metropolis Black", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Location = new System.Drawing.Point(12, 563);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(157, 23);
@@ -188,7 +188,7 @@ namespace Tubes2Stima_ckck
             // label8
             // 
             this.label8.BackColor = System.Drawing.Color.Transparent;
-            this.label8.Font = new System.Drawing.Font("Metropolis Black", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.Location = new System.Drawing.Point(12, 601);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(194, 23);
@@ -202,7 +202,7 @@ namespace Tubes2Stima_ckck
             this.label9.Font = new System.Drawing.Font("Comic Sans MS", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.Location = new System.Drawing.Point(193, 560);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(13, 19);
+            this.label9.Size = new System.Drawing.Size(15, 24);
             this.label9.TabIndex = 14;
             this.label9.Text = ":";
             // 
@@ -213,7 +213,7 @@ namespace Tubes2Stima_ckck
             this.label10.Font = new System.Drawing.Font("Comic Sans MS", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.Location = new System.Drawing.Point(193, 598);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(13, 19);
+            this.label10.Size = new System.Drawing.Size(15, 24);
             this.label10.TabIndex = 15;
             this.label10.Text = ":";
             // 
@@ -224,13 +224,13 @@ namespace Tubes2Stima_ckck
             this.comboBoxInitial.BackColor = System.Drawing.Color.SteelBlue;
             this.comboBoxInitial.Cursor = System.Windows.Forms.Cursors.Hand;
             this.comboBoxInitial.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxInitial.Font = new System.Drawing.Font("Metropolis", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBoxInitial.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxInitial.ForeColor = System.Drawing.SystemColors.Info;
             this.comboBoxInitial.FormattingEnabled = true;
             this.comboBoxInitial.Location = new System.Drawing.Point(212, 561);
             this.comboBoxInitial.MaximumSize = new System.Drawing.Size(500, 0);
             this.comboBoxInitial.Name = "comboBoxInitial";
-            this.comboBoxInitial.Size = new System.Drawing.Size(176, 19);
+            this.comboBoxInitial.Size = new System.Drawing.Size(174, 25);
             this.comboBoxInitial.TabIndex = 16;
             this.comboBoxInitial.SelectedIndexChanged += new System.EventHandler(this.comboBoxInitial_SelectedIndexChanged);
             // 
@@ -241,20 +241,20 @@ namespace Tubes2Stima_ckck
             this.comboBoxTarget.BackColor = System.Drawing.Color.SteelBlue;
             this.comboBoxTarget.Cursor = System.Windows.Forms.Cursors.Hand;
             this.comboBoxTarget.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxTarget.Font = new System.Drawing.Font("Metropolis", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBoxTarget.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxTarget.ForeColor = System.Drawing.SystemColors.Info;
             this.comboBoxTarget.FormattingEnabled = true;
             this.comboBoxTarget.Location = new System.Drawing.Point(212, 596);
             this.comboBoxTarget.MaximumSize = new System.Drawing.Size(500, 0);
             this.comboBoxTarget.Name = "comboBoxTarget";
-            this.comboBoxTarget.Size = new System.Drawing.Size(176, 19);
+            this.comboBoxTarget.Size = new System.Drawing.Size(174, 25);
             this.comboBoxTarget.TabIndex = 17;
             this.comboBoxTarget.SelectedIndexChanged += new System.EventHandler(this.comboBoxTarget_SelectedIndexChanged);
             // 
             // buttonSubmit
             // 
             this.buttonSubmit.BackColor = System.Drawing.Color.Cornsilk;
-            this.buttonSubmit.Font = new System.Drawing.Font("Poppins Black", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonSubmit.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonSubmit.ForeColor = System.Drawing.Color.SteelBlue;
             this.buttonSubmit.Location = new System.Drawing.Point(15, 644);
             this.buttonSubmit.Name = "buttonSubmit";
@@ -268,7 +268,7 @@ namespace Tubes2Stima_ckck
             // 
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(534, 703);
+            this.ClientSize = new System.Drawing.Size(532, 703);
             this.Controls.Add(this.buttonSubmit);
             this.Controls.Add(this.comboBoxTarget);
             this.Controls.Add(this.comboBoxInitial);
@@ -286,7 +286,8 @@ namespace Tubes2Stima_ckck
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.MinimumSize = new System.Drawing.Size(550, 630);
+            this.MaximumSize = new System.Drawing.Size(550, 750);
+            this.MinimumSize = new System.Drawing.Size(550, 750);
             this.Name = "MainForm";
             this.Text = "Tubes Brow";
             this.ResumeLayout(false);

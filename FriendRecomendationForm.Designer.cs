@@ -37,12 +37,11 @@ namespace Tubes2Stima_ckck
             // labelFriendRecomendation
             // 
             this.labelFriendRecomendation.BackColor = System.Drawing.Color.Transparent;
-            this.labelFriendRecomendation.Font = new System.Drawing.Font("Poppins Black", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelFriendRecomendation.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelFriendRecomendation.ForeColor = System.Drawing.Color.SteelBlue;
-            this.labelFriendRecomendation.Location = new System.Drawing.Point(9, 84);
-            this.labelFriendRecomendation.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelFriendRecomendation.Location = new System.Drawing.Point(12, 103);
             this.labelFriendRecomendation.Name = "labelFriendRecomendation";
-            this.labelFriendRecomendation.Size = new System.Drawing.Size(376, 19);
+            this.labelFriendRecomendation.Size = new System.Drawing.Size(501, 23);
             this.labelFriendRecomendation.TabIndex = 19;
             this.labelFriendRecomendation.Text = "Friends Recomendation for ?\r\n";
             // 
@@ -51,38 +50,36 @@ namespace Tubes2Stima_ckck
             this.titleExplore.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.titleExplore.BackColor = System.Drawing.Color.Transparent;
-            this.titleExplore.Font = new System.Drawing.Font("Poppins Black", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.titleExplore.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.titleExplore.ForeColor = System.Drawing.Color.SteelBlue;
-            this.titleExplore.Location = new System.Drawing.Point(9, 7);
-            this.titleExplore.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.titleExplore.Location = new System.Drawing.Point(12, 9);
             this.titleExplore.Name = "titleExplore";
-            this.titleExplore.Size = new System.Drawing.Size(376, 19);
+            this.titleExplore.Size = new System.Drawing.Size(559, 23);
             this.titleExplore.TabIndex = 20;
             this.titleExplore.Text = "Explore Friends";
             // 
             // pathExplore
             // 
             this.pathExplore.BackColor = System.Drawing.Color.Transparent;
-            this.pathExplore.Font = new System.Drawing.Font("Metropolis", 10F);
-            this.pathExplore.Location = new System.Drawing.Point(41, 41);
-            this.pathExplore.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.pathExplore.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.pathExplore.Location = new System.Drawing.Point(43, 42);
             this.pathExplore.Name = "pathExplore";
-            this.pathExplore.Size = new System.Drawing.Size(343, 38);
+            this.pathExplore.Size = new System.Drawing.Size(457, 47);
             this.pathExplore.TabIndex = 21;
             this.pathExplore.Text = "SiapaKeSiapa";
             // 
             // FriendRecomendationForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.ClientSize = new System.Drawing.Size(400, 522);
+            this.ClientSize = new System.Drawing.Size(532, 573);
             this.Controls.Add(this.pathExplore);
             this.Controls.Add(this.titleExplore);
             this.Controls.Add(this.labelFriendRecomendation);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.MinimumSize = new System.Drawing.Size(416, 518);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.MinimumSize = new System.Drawing.Size(550, 620);
             this.Name = "FriendRecomendationForm";
             this.Text = "IniTeman";
             this.ResumeLayout(false);
