@@ -1,0 +1,17 @@
+D:\tubes\stima 2\Tubes2Stima-ckck\bin\Delivery\data\test.txt
+D:\tubes\stima 2\Tubes2Stima-ckck\bin\Delivery\Tubes2Stima-ckck.exe.config
+D:\tubes\stima 2\Tubes2Stima-ckck\bin\Delivery\Tubes2Stima-ckck.exe
+D:\tubes\stima 2\Tubes2Stima-ckck\bin\Delivery\Tubes2Stima-ckck.pdb
+D:\tubes\stima 2\Tubes2Stima-ckck\bin\Delivery\AutomaticGraphLayout.dll
+D:\tubes\stima 2\Tubes2Stima-ckck\bin\Delivery\AutomaticGraphLayout.Drawing.dll
+D:\tubes\stima 2\Tubes2Stima-ckck\bin\Delivery\Microsoft.Msagl.GraphViewerGdi.dll
+D:\tubes\stima 2\Tubes2Stima-ckck\bin\Delivery\Microsoft.Msagl.WpfGraphControl.dll
+D:\tubes\stima 2\Tubes2Stima-ckck\obj\Delivery\Tubes2Stima_ckck.csprojAssemblyReference.cache
+D:\tubes\stima 2\Tubes2Stima-ckck\obj\Delivery\Tubes2Stima_ckck.FriendRecomendationForm.resources
+D:\tubes\stima 2\Tubes2Stima-ckck\obj\Delivery\Tubes2Stima_ckck.MainForm.resources
+D:\tubes\stima 2\Tubes2Stima-ckck\obj\Delivery\Tubes2Stima_ckck.Properties.Resources.resources
+D:\tubes\stima 2\Tubes2Stima-ckck\obj\Delivery\Tubes2Stima_ckck.csproj.GenerateResource.cache
+D:\tubes\stima 2\Tubes2Stima-ckck\obj\Delivery\Tubes2Stima_ckck.csproj.CoreCompileInputs.cache
+D:\tubes\stima 2\Tubes2Stima-ckck\obj\Delivery\Tubes2Stima_ckck.csproj.CopyComplete
+D:\tubes\stima 2\Tubes2Stima-ckck\obj\Delivery\Tubes2Stima-ckck.exe
+D:\tubes\stima 2\Tubes2Stima-ckck\obj\Delivery\Tubes2Stima-ckck.pdb
