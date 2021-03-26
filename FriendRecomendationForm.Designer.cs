@@ -39,7 +39,7 @@ namespace Tubes2Stima_ckck
             this.labelFriendRecomendation.BackColor = System.Drawing.Color.Transparent;
             this.labelFriendRecomendation.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelFriendRecomendation.ForeColor = System.Drawing.Color.SteelBlue;
-            this.labelFriendRecomendation.Location = new System.Drawing.Point(12, 196);
+            this.labelFriendRecomendation.Location = new System.Drawing.Point(12, 162);
             this.labelFriendRecomendation.Name = "labelFriendRecomendation";
             this.labelFriendRecomendation.Size = new System.Drawing.Size(501, 23);
             this.labelFriendRecomendation.TabIndex = 19;
@@ -64,7 +64,7 @@ namespace Tubes2Stima_ckck
             this.pathExplore.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.pathExplore.Location = new System.Drawing.Point(43, 42);
             this.pathExplore.Name = "pathExplore";
-            this.pathExplore.Size = new System.Drawing.Size(457, 139);
+            this.pathExplore.Size = new System.Drawing.Size(457, 111);
             this.pathExplore.TabIndex = 21;
             this.pathExplore.Text = "SiapaKeSiapa";
             // 

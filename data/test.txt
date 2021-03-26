@@ -1,16 +1,14 @@
-15
-Adila Aulia
-Adila Muhammad
-Muhammad Dehan
-Muhammad Azhar
-Dehan Adila
-Dehan Faturahman
-Alkautsar Aulia
-Azhar Faturahman
-Azhar Dadang
-Aulia Faturahman
-Dadang Dehan
-Dadang Adila
-Irene Azhar
-Aulia Muhammad
-Jar Han
+﻿13
+A B
+A C
+A D
+B C
+B E
+B F
+C F
+C G
+D G
+D F
+E H
+E F
+F H
