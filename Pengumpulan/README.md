@@ -16,8 +16,8 @@
 - [Visual Studio](https://visualstudio.microsoft.com/downloads/)
 
 ## Executing
-- Program dapat langsung digunakan dengan menjalankan shortcut `main`
-- Alternatif lain, program dapat dijalankan dengan mengeksekusi file `Tubes2Stima-ckck.exe` pada folder bin
+- Program dapat dijalankan dengan mengeksekusi file `main.bat`
+- Alternatif lain, Program dapat dijalankan dengan mengeksekusi file `Tubes2Stima-ckck.exe` pada folder bin
 
 ## Author
 - Muhammad Azhar Faturahman (13519020)
