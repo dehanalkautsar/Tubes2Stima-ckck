@@ -7,7 +7,9 @@
 *Semester II Tahun 2020/2021*
 
 ## Algoritma BFS dan DFS
-<<ISI>>
+Depth First Search (DFS) adalah algoritma untuk melintasi grafik terbatas. DFS mengunjungi simpul anak sebelum mengunjungi simpul disampingnya. Maka, ia melintasi kedalaman jalur tertentu sebelum menjelajahi lebarnya. Rekursi sangat umum digunakan saat mengimplementasikan algoritma DFS ini.
+Algoritma dimulai dengan titik "root" yang dipilih. Kemudian simpul tersebut secara berulang-ulang bertransisi dari simpul saat ini ke simpul yang berdekatan dan belum dikunjungi, hingga ia tidak dapat lagi menemukan simpul yang belum dijelajahi untuk bertransisi ke dari lokasinya saat ini atau node yang dijelajahi sudah berupa node target yang dituju. 
+Berbeda dengan DFS, Breadth First Search (BFS) adalah algoritma untuk melintasi grafik terbatas yang mengunjungi simpul tetangga terlebih dahulu sebelum menjelajahi simpul anaknya. Oleh karena itu, ia melintasi jalur secara menyamping terlebih dahulu baru menuju kebawah. Pada umumnya dalam mengimplementasikan algoritma BFS kita tidak perlu menggunakan kode yang rekursif, namun tidak dibatasi pula bahwa algoritma ini harus tidak rekursif.
 
 ## Requirement
 - Microsoft Windows Operating System  
