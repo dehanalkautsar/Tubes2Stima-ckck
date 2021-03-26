@@ -65,7 +65,7 @@ namespace Tubes2Stima_ckck
             //initGraph.displayFriendR(mutualT);
         }
         
-        public static void TestDehan()
+        public static void TestDehan() //testttt dehan
         {
             Graph initGraph = ReadFile.inputGraphFile("test.txt");
             string pilihan;
