@@ -21,6 +21,7 @@ Berbeda dengan DFS, Breadth First Search (BFS) adalah algoritma untuk melintasi 
 - Program dapat dijalankan dengan mengeksekusi file `main.bat`
 - Alternatif lain, Program dapat dijalankan dengan mengeksekusi file `Tubes2Stima-ckck.exe` pada folder bin
 - Setelah program dibuka, pilih file graf yang ingin digunakan dengan cara menekan tombol Browse
+- File data graf tersedia di folder `bin/data/`
 - Anda dapat memilih jenis algoritma yang ingin digunakan
 - Untuk melakukan Explore Friend dan Friend Recomendation, terlebih dahulu pilih akun yang ingin digunakan, setelah itu tekan tombol Submit
 
